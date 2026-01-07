@@ -12,7 +12,7 @@ const ScrollWord: React.FC = () => {
 
     // Animation values for the letters spreading
     const letterSpacing = useTransform(scrollYProgress, [0.3, 0.7], ["-0.05em", "0.5em"]);
-    const opacity = useTransform(scrollYProgress, [0.2, 0.3, 0.7, 0.8], [0, 1, 1, 0]);
+    const opacity = useTransform(scrollYProgress, [0, 0.1, 0.8, 0.9], [0, 1, 1, 0]);
     const scale = useTransform(scrollYProgress, [0.3, 0.7], [0.8, 1.2]);
 
     // Trail layers animations
