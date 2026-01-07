@@ -11,8 +11,8 @@ const Footer: React.FC = () => {
             
             <div className="space-y-6 mb-12">
               <p className="text-2xl md:text-3xl font-bold text-white leading-tight">
-                KI ist kein Tool-Thema.<br />
-                Es ist ein Struktur-Thema.
+                KI ist kein Tool Thema.<br />
+                Es ist ein Struktur Thema.
               </p>
               <p className="text-xl text-white/50 leading-relaxed max-w-xl">
                 Ich unterstütze Unternehmen dabei, Marketing und Vertrieb so zu bauen, 

@@ -18,20 +18,20 @@ const Testimonials: React.FC = () => {
   const handleNext = () => setIndex((prev) => (prev + 1) % TESTIMONIALS.length);
 
   return (
-    <section className="py-40 px-6 bg-dark overflow-hidden">
+    <section className="py-24 md:py-40 px-6 bg-dark overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-8xl font-black mb-6 uppercase tracking-tighter text-white leading-[0.9]">
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-8xl font-black mb-6 uppercase tracking-tighter text-white leading-[1] md:leading-[0.9]">
             Was nach der <br />
-            <span className="text-tiger lowercase tracking-tight font-bold">zusammenarbeit</span> bleibt
+            <span className="text-tiger lowercase tracking-tight font-bold inline-block max-w-full break-all md:break-normal">zusammenarbeit</span> bleibt
           </h2>
-          <p className="text-xl md:text-2xl text-white/40 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-2xl text-white/40 font-medium max-w-2xl mx-auto leading-relaxed px-4">
             Klarere Abläufe. Weniger Reibung. <br className="hidden md:block" />
             Systeme, die genutzt werden.
           </p>
         </div>
 
-        <div className="relative h-[650px] md:h-[550px] flex items-center justify-center">
+        <div className="relative min-h-[600px] md:h-[550px] flex items-center justify-center">
           <AnimatePresence mode="popLayout">
             {TESTIMONIALS.map((t, i) => {
               const isFront = i === index;
@@ -53,18 +53,18 @@ const Testimonials: React.FC = () => {
                   }}
                   exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.3 } }}
                   onClick={handleNext}
-                  className={`absolute w-full max-w-5xl bg-[#0A0A0A] rounded-3xl border ${isFront ? 'border-tiger/40' : 'border-white/10'} p-8 md:p-12 shadow-2xl cursor-pointer group`}
+                  className={`absolute w-full max-w-5xl bg-[#0A0A0A] rounded-3xl border ${isFront ? 'border-tiger/40' : 'border-white/10'} p-6 md:p-12 shadow-2xl cursor-pointer group`}
                 >
-                  <div className="flex gap-2 mb-10">
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/10"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/10"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                  <div className="flex gap-2 mb-8 md:mb-10">
+                    <div className="w-2 h-2 rounded-full bg-white/10"></div>
+                    <div className="w-2 h-2 rounded-full bg-white/10"></div>
+                    <div className="w-2 h-2 rounded-full bg-white/10"></div>
                   </div>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
                     <div className="lg:col-span-7">
                       <div className="mb-6">
-                        <h3 className="text-4xl md:text-5xl font-black mb-1 uppercase tracking-tighter text-white">
+                        <h3 className="text-3xl md:text-5xl font-black mb-1 uppercase tracking-tighter text-white">
                           {t.author}
                         </h3>
                         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">
@@ -72,17 +72,17 @@ const Testimonials: React.FC = () => {
                         </p>
                       </div>
                       
-                      <p className="text-xl md:text-2xl text-white/70 leading-relaxed mb-12 italic font-medium">
+                      <p className="text-lg md:text-2xl text-white/70 leading-relaxed mb-10 italic font-medium">
                         „{t.text}“
                       </p>
 
-                      <div className="flex gap-4">
+                      <div className="grid grid-cols-2 gap-3 md:gap-4">
                         {t.stats.map((stat, sIdx) => (
-                          <div key={sIdx} className="bg-white/[0.03] border border-white/5 rounded-2xl px-8 py-6 flex-1">
-                            <div className="text-3xl md:text-4xl font-black text-white mb-1 tracking-tighter">
+                          <div key={sIdx} className="bg-white/[0.03] border border-white/5 rounded-xl px-4 py-4 md:px-8 md:py-6 flex-1">
+                            <div className="text-xl md:text-4xl font-black text-white mb-1 tracking-tighter">
                               {stat.value}
                             </div>
-                            <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/20">
+                            <div className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.1em] md:tracking-[0.2em] text-white/20">
                               {stat.label}
                             </div>
                           </div>
@@ -100,12 +100,12 @@ const Testimonials: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        <div className="flex justify-center gap-3 mt-16">
+        <div className="flex justify-center gap-3 mt-12 md:mt-16">
           {TESTIMONIALS.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
-              className={`h-1.5 rounded-full transition-all duration-500 ${index === i ? 'w-16 bg-tiger' : 'w-4 bg-white/10'}`}
+              className={`h-1.5 rounded-full transition-all duration-500 ${index === i ? 'w-12 md:w-16 bg-tiger' : 'w-3 md:w-4 bg-white/10'}`}
             />
           ))}
         </div>

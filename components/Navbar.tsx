@@ -43,7 +43,6 @@ const Navbar: React.FC = () => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      // Offset für die Navbar (ca. 100px-120px)
       const offset = 110;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -62,16 +61,16 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100] px-4 py-6 pointer-events-none">
+    <div className="fixed top-0 left-0 right-0 z-[100] px-4 py-4 md:py-6 pointer-events-none">
       <div className="mx-auto max-w-7xl flex flex-col items-center">
         
         {/* Floating Main Island */}
         <MotionNav
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className={`pointer-events-auto flex items-center gap-4 md:gap-8 px-4 md:px-6 py-2 rounded-2xl md:rounded-full border transition-all duration-500 ${
+          className={`pointer-events-auto flex items-center gap-3 md:gap-8 px-3 md:px-6 py-2 rounded-2xl md:rounded-full border transition-all duration-500 ${
             isScrolled 
-              ? 'bg-dark/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-white/20' 
+              ? 'bg-dark/95 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] border-white/20 scale-95 md:scale-100' 
               : 'bg-white/5 backdrop-blur-md border-white/10'
           }`}
         >
@@ -80,7 +79,7 @@ const Navbar: React.FC = () => {
             onClick={(e) => handleNavClick(e, 'home')}
             className="flex items-center gap-3 pr-2 border-r border-white/10 group focus:outline-none"
           >
-            <div className={`w-6 h-6 rounded-full bg-gradient-to-tr from-tiger via-sunflower to-sapphire transition-transform group-hover:scale-110 ${activeSection === 'home' ? 'ring-2 ring-white/50 ring-offset-2 ring-offset-dark' : ''}`}></div>
+            <div className={`w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-tr from-tiger via-sunflower to-sapphire transition-transform group-hover:scale-110 ${activeSection === 'home' ? 'ring-2 ring-white/50 ring-offset-2 ring-offset-dark' : ''}`}></div>
             <span className="font-black text-[10px] tracking-widest uppercase hidden sm:block text-white/80">Cedric</span>
           </button>
 
@@ -109,11 +108,11 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Toggle */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-1.5 focus:outline-none"
+            className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-1 focus:outline-none"
           >
-            <div className={`w-4 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
+            <div className={`w-4 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
             <div className={`w-4 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
-            <div className={`w-4 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+            <div className={`w-4 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
           </button>
 
           {/* CTA Button */}
@@ -123,7 +122,7 @@ const Navbar: React.FC = () => {
               activeSection === 'contact' ? 'bg-white text-black' : 'bg-sapphire text-white shadow-[0_10px_20px_-5px_rgba(65,100,255,0.4)]'
             }`}
           >
-            <span className="relative z-10 text-[10px] font-black uppercase tracking-widest">
+            <span className="relative z-10 text-[9px] md:text-[10px] font-black uppercase tracking-widest">
               Jetzt anfragen
             </span>
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform"></div>
@@ -137,7 +136,7 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 10, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              className="md:hidden pointer-events-auto w-full max-w-[280px] bg-dark/95 backdrop-blur-3xl border border-white/10 rounded-3xl p-6 shadow-2xl"
+              className="md:hidden pointer-events-auto w-full max-w-[280px] bg-dark/98 backdrop-blur-3xl border border-white/10 rounded-3xl p-6 shadow-2xl"
             >
               <div className="flex flex-col gap-6">
                 {navLinks.map((link) => (
