@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Marketing & Sales | No Bullshit AI Workshops</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              tiger: '#FE6237',
+              sunflower: '#FFBA25',
+              maya: '#7CC3FF',
+              sapphire: '#4164FF',
+              dark: '#0A0A0A',
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        scroll-padding-top: 120px;
+      }
+      section {
+        scroll-margin-top: 120px;
+      }
+      .text-gradient {
+        background: linear-gradient(90deg, #FE6237, #FFBA25, #7CC3FF, #4164FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      ::selection {
+        background: #FFBA25;
+        color: #0A0A0A;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "framer-motion": "https://esm.sh/framer-motion@^11.11.11"
+  }
+}
+</script>
+</head>
+<body class="bg-dark text-white font-sans antialiased overflow-x-hidden">
+    <div id="root"></div>
+</body>
+</html>
