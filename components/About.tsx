@@ -3,70 +3,109 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SKILLS } from '../constants';
 
-const MotionDiv = motion.div as any;
-
 const About: React.FC = () => {
   return (
-    <section id="methodology" className="py-24 md:py-32 px-6 bg-dark">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20">
+    <section id="about" className="relative bg-dark py-32 px-4 overflow-hidden">
+      <div className="max-w-[95vw] mx-auto relative z-10">
 
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        {/* Typographic Wall */}
+        <div className="flex flex-col font-black italic tracking-tighter leading-[0.85] opacity-90 select-none cursor-default">
+
+          {/* Row 1 */}
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-[8vw] md:text-[6vw] text-white/30"
           >
-            <div className="mb-8 relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border border-white/10 group">
-              <div className="absolute inset-0 bg-tiger mix-blend-color opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <img
-                src="/cedric-profile.png"
-                alt="Cedric"
-                className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
-              />
-            </div>
+            SEIT ÜBER 10 JAHREN
+          </motion.div>
 
-            <h2 className="text-4xl md:text-7xl font-black mb-8 md:mb-12 uppercase tracking-tighter leading-[1] md:leading-[0.9] text-white">
-              Cedric KI: <br />
-              <span className="text-tiger lowercase font-bold tracking-tight inline-block max-w-full break-words">haltung vor tools.</span>
-            </h2>
-            <div className="space-y-6 md:space-y-8 text-lg md:text-2xl font-medium text-white/70 max-w-lg leading-snug tracking-tight">
-              <p>
-                Ich arbeite nicht mit isolierten KI-Tools.<br className="hidden md:block" />
-                Ich schaue, wie Arbeit durch ein Unternehmen fließt – <br className="hidden md:block" />
-                und wo sie hängen bleibt.
-              </p>
-              <p>
-                KI ist kein Selbstzweck.<br className="hidden md:block" />
-                Sie ist ein Hebel, wenn die Struktur stimmt.
-              </p>
-            </div>
-          </MotionDiv>
+          {/* Row 2 */}
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-[10vw] md:text-[8vw] text-white self-center md:self-start md:ml-[10vw]"
+          >
+            BEGLEITE ICH KMUS
+          </motion.div>
 
-          <div className="space-y-4">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-8 md:mb-10">FÄHIGKEITEN & FOKUS</h3>
-            {SKILLS.map((skill, idx) => (
-              <MotionDiv
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05 }}
-                className="p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-tiger/30 transition-all group"
-              >
-                <div className="flex items-center gap-4 mb-1">
-                  <span className="text-tiger font-black text-xl">•</span>
-                  <span className="text-lg md:text-xl font-black text-white group-hover:text-tiger transition-colors uppercase tracking-tighter">
-                    {skill.title}
-                  </span>
-                </div>
-                <p className="text-white/40 text-base md:text-lg ml-8 font-medium italic leading-tight">
-                  ({skill.description})
-                </p>
-              </MotionDiv>
-            ))}
+          {/* Row 3 - With Image Intersecting */}
+          <div className="relative">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-[8vw] md:text-[6vw] text-white/30 text-right pr-4 md:pr-32"
+            >
+              IM MARKETING & VERTRIEB
+            </motion.div>
+
+            {/* Profile Image - Floating Absolute */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, rotate: -5 }}
+              whileInView={{ scale: 1, opacity: 1, rotate: 3 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="absolute -top-[10vw] md:-top-[15vw] left-[5vw] md:left-[20vw] w-[25vw] h-[30vw] md:w-[20vw] md:h-[25vw] z-20 pointer-events-none"
+            >
+              <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl rotate-3 bg-dark">
+                <img src="/cedric-profile.png" className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" alt="Cedric" />
+                <div className="absolute inset-0 bg-tiger mix-blend-overlay opacity-20"></div>
+              </div>
+            </motion.div>
           </div>
 
+          {/* Spacer */}
+          <div className="h-[5vh] md:h-[10vh]"></div>
+
+          {/* PUNCHLINES */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-[15vw] leading-[0.8] text-tiger text-center"
+          >
+            ERGEBNISSE
+          </motion.div>
+
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-[15vw] leading-[0.8] text-white text-center mix-blend-difference z-30 relative"
+          >
+            SCHLAGEN
+          </motion.div>
+
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="text-[15vw] leading-[0.8] text-tiger text-center"
+          >
+            MEINUNGEN
+          </motion.div>
+
         </div>
+
+        {/* Subtle Skills Grid at Bottom */}
+        <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-4 opacity-40 hover:opacity-100 transition-opacity duration-500">
+          {SKILLS.map((skill, idx) => (
+            <div key={idx} className="border-t border-white/20 pt-4">
+              <h4 className="text-tiger font-bold uppercase text-xs tracking-widest mb-1">{skill.title}</h4>
+              <p className="text-white text-xs leading-relaxed">{skill.description}</p>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
