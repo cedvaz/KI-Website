@@ -17,14 +17,10 @@ const Hero: React.FC = () => {
 
   return (
     <div id="home" className="relative min-h-screen bg-dark flex items-center overflow-hidden px-6 md:px-12 pt-32 pb-20">
-      
-      {/* Background "CEDRIC" - Clean Inter Bold */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 opacity-[0.03]">
-        <span className="text-[30vw] font-black whitespace-nowrap text-white tracking-tighter">CEDRIC</span>
-      </div>
+
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
-        
+
         <MotionDiv
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,15 +29,15 @@ const Hero: React.FC = () => {
         >
           Marketing & Sales Intelligence
         </MotionDiv>
-        
+
         <div className="flex flex-col gap-0 mb-16">
           {HERO_ROLES.map((role, index) => (
             <MotionH1
               key={index}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ 
-                duration: 0.7, 
+              transition={{
+                duration: 0.7,
                 delay: index * 0.1,
                 ease: [0.22, 1, 0.36, 1]
               }}

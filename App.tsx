@@ -51,25 +51,6 @@ const App: React.FC = () => {
         <ScrollWord />
 
         {/* Quirky Industry Section (Proof) */}
-        <section className="py-16 bg-dark overflow-hidden border-y border-white/5">
-          <div className="whitespace-nowrap flex gap-16 animate-marquee">
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="flex gap-16 items-center text-2xl font-black uppercase tracking-widest text-white/10 italic">
-                <span>Industrie</span>
-                <span className="w-2 h-2 rounded-full bg-tiger"></span>
-                <span>Agenturen</span>
-                <span className="w-2 h-2 rounded-full bg-sunflower"></span>
-                <span>Immobilien</span>
-                <span className="w-2 h-2 rounded-full bg-maya"></span>
-                <span>Energie</span>
-                <span className="w-2 h-2 rounded-full bg-sapphire"></span>
-                <span>E-Commerce</span>
-                <span className="w-2 h-2 rounded-full bg-white"></span>
-                <span>Software</span>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <Process />
 
@@ -81,13 +62,6 @@ const App: React.FC = () => {
       <CookieConsent />
 
       <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
         ::selection {
           background: #FFBA25;
           color: #0A0A0A;

@@ -10,12 +10,21 @@ const About: React.FC = () => {
     <section id="methodology" className="py-24 md:py-32 px-6 bg-dark">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20">
-          
+
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
+            <div className="mb-8 relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border border-white/10 group">
+              <div className="absolute inset-0 bg-tiger mix-blend-color opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <img
+                src="/cedric-profile.png"
+                alt="Cedric"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+
             <h2 className="text-4xl md:text-7xl font-black mb-8 md:mb-12 uppercase tracking-tighter leading-[1] md:leading-[0.9] text-white">
               Cedric KI: <br />
               <span className="text-tiger lowercase font-bold tracking-tight inline-block max-w-full break-words">haltung vor tools.</span>
@@ -36,7 +45,7 @@ const About: React.FC = () => {
           <div className="space-y-4">
             <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-8 md:mb-10">FÄHIGKEITEN & FOKUS</h3>
             {SKILLS.map((skill, idx) => (
-              <MotionDiv 
+              <MotionDiv
                 key={idx}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
