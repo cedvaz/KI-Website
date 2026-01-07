@@ -8,14 +8,14 @@ const Footer: React.FC = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-16 mb-24">
           <div className="max-w-2xl">
             {/* CEDRIC KI Headline entfernt */}
-            
+
             <div className="space-y-6 mb-12">
               <p className="text-2xl md:text-3xl font-bold text-white leading-tight">
                 KI ist kein Tool Thema.<br />
                 Es ist ein Struktur Thema.
               </p>
               <p className="text-xl text-white/50 leading-relaxed max-w-xl">
-                Ich unterstütze Unternehmen dabei, Marketing und Vertrieb so zu bauen, 
+                Ich unterstütze Unternehmen dabei, Marketing und Vertrieb so zu bauen,
                 dass KI Arbeit abnimmt – statt neue zu erzeugen.
               </p>
             </div>
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-2 gap-x-12 md:gap-x-24 gap-y-12">
             <div>
               <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Navigation</h5>
@@ -47,9 +47,9 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-white/10">
-          <div>© 2024 Cedric KI – Marketing & Sales Intelligence</div>
+          <div>© 2026 Cedric KI – Marketing & Sales Intelligence</div>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">Impressum</a>
             <a href="#" className="hover:text-white transition-colors">Datenschutz</a>
