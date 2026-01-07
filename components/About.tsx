@@ -21,7 +21,7 @@ const About: React.FC = () => {
               <img
                 src="/cedric-profile.png"
                 alt="Cedric"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
 
