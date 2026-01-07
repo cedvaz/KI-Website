@@ -11,6 +11,7 @@ import Process from './components/Process';
 import About from './components/About';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
+import ScrollWord from './components/ScrollWord';
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -23,15 +24,15 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen selection:bg-sunflower selection:text-dark">
       {/* Scroll Progress Bar */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-tiger via-maya to-sapphire z-[100] origin-left" 
-        style={{ scaleX } as any} 
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-tiger via-maya to-sapphire z-[100] origin-left"
+        style={{ scaleX } as any}
       />
-      
+
       <Navbar />
       <main>
         <Hero />
-        
+
         {/* Subtle Wave Divider */}
         <div className="w-full overflow-hidden leading-[0]">
           <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-24 w-full">
@@ -40,36 +41,38 @@ const App: React.FC = () => {
         </div>
 
         <Services />
-        
+
         <Modules />
 
         <Methodology />
 
         <Testimonials />
-        
+
+        <ScrollWord />
+
         {/* Quirky Industry Section (Proof) */}
         <section className="py-16 bg-dark overflow-hidden border-y border-white/5">
-           <div className="whitespace-nowrap flex gap-16 animate-marquee">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="flex gap-16 items-center text-2xl font-black uppercase tracking-widest text-white/10 italic">
-                  <span>Industrie</span> 
-                  <span className="w-2 h-2 rounded-full bg-tiger"></span>
-                  <span>Agenturen</span> 
-                  <span className="w-2 h-2 rounded-full bg-sunflower"></span>
-                  <span>Immobilien</span> 
-                  <span className="w-2 h-2 rounded-full bg-maya"></span>
-                  <span>Energie</span> 
-                  <span className="w-2 h-2 rounded-full bg-sapphire"></span>
-                  <span>E-Commerce</span> 
-                  <span className="w-2 h-2 rounded-full bg-white"></span>
-                  <span>Software</span>
-                </div>
-              ))}
-           </div>
+          <div className="whitespace-nowrap flex gap-16 animate-marquee">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="flex gap-16 items-center text-2xl font-black uppercase tracking-widest text-white/10 italic">
+                <span>Industrie</span>
+                <span className="w-2 h-2 rounded-full bg-tiger"></span>
+                <span>Agenturen</span>
+                <span className="w-2 h-2 rounded-full bg-sunflower"></span>
+                <span>Immobilien</span>
+                <span className="w-2 h-2 rounded-full bg-maya"></span>
+                <span>Energie</span>
+                <span className="w-2 h-2 rounded-full bg-sapphire"></span>
+                <span>E-Commerce</span>
+                <span className="w-2 h-2 rounded-full bg-white"></span>
+                <span>Software</span>
+              </div>
+            ))}
+          </div>
         </section>
 
         <Process />
-        
+
         <About />
       </main>
       <Footer />
