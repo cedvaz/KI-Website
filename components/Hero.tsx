@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         {/* Left Column: Text Content */}
-        <div className="order-2 lg:order-1 flex flex-col justify-center">
+        <div className="order-1 lg:order-1 flex flex-col justify-center">
           <MotionDiv
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Right Column: Hero Image - Magazine Style */}
-        <div className="order-1 lg:order-2 relative h-[50vh] lg:h-[80vh] w-full flex items-center justify-center lg:justify-end">
+        <div className="order-2 lg:order-2 relative h-[50vh] lg:h-[80vh] w-full flex items-center justify-center lg:justify-end">
           <MotionDiv
             initial={{ opacity: 0, x: 50, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -100,22 +100,14 @@ const Hero: React.FC = () => {
             {/* Decorative Elements */}
             <div className="absolute bottom-8 left-8 right-8">
               <div className="text-white/80 font-mono text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-tiger animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-maya animate-pulse"></span>
                 Available for Projects
               </div>
             </div>
 
           </MotionDiv>
 
-          {/* Floating Badge (Optional decorative) */}
-          <MotionDiv
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.2, duration: 0.4 }}
-            className="absolute -bottom-6 -left-6 lg:bottom-12 lg:-left-12 bg-tiger text-white w-32 h-32 rounded-full flex items-center justify-center font-black uppercase text-center text-sm leading-none p-4 shadow-xl rotate-12 z-20 hidden md:flex"
-          >
-            No<br />Bullshit<br />AI
-          </MotionDiv>
+
         </div>
 
       </div>
