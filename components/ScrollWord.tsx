@@ -12,14 +12,18 @@ const ScrollWord: React.FC = () => {
 
     // Animation values for the letters spreading
     const letterSpacing = useTransform(scrollYProgress, [0.3, 0.7], ["-0.05em", "0.5em"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.1, 0.8, 0.9], [0, 1, 1, 0]);
+    const opacity = useTransform(scrollYProgress, [0, 0.1, 0.7, 0.9], [0, 1, 1, 0]);
     const scale = useTransform(scrollYProgress, [0.3, 0.7], [0.8, 1.2]);
 
-    // Trail layers animations
+    // Trail layers animations - fade out at the end
     const layer1Y = useTransform(scrollYProgress, [0.3, 0.7], [0, -100]);
     const layer2Y = useTransform(scrollYProgress, [0.3, 0.7], [0, 100]);
-    const layer1Opacity = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0, 0.3, 0]);
-    const layer2Opacity = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0, 0.3, 0]);
+    const layer1Opacity = useTransform(scrollYProgress, [0.3, 0.5, 0.7, 0.9], [0, 0.3, 0.3, 0]);
+    const layer2Opacity = useTransform(scrollYProgress, [0.3, 0.5, 0.7, 0.9], [0, 0.3, 0.3, 0]);
+
+    // "the hype" grows continuously and stays visible longer
+    const hypeOpacity = useTransform(scrollYProgress, [0.4, 0.5, 0.85, 0.95], [0, 1, 1, 0]);
+    const hypeScale = useTransform(scrollYProgress, [0.4, 0.95], [0.5, 2.5]);
 
     return (
         <section ref={containerRef} className="relative h-[300vh] bg-dark">
@@ -63,11 +67,11 @@ const ScrollWord: React.FC = () => {
                     UNFUCK
                 </motion.div>
 
-                {/* Center Accent Text */}
+                {/* Center Accent Text - grows continuously */}
                 <motion.div
-                    initial={{ opacity: 0 }}
                     style={{
-                        opacity: useTransform(scrollYProgress, [0.4, 0.5, 0.6], [0, 1, 0])
+                        opacity: hypeOpacity as any,
+                        scale: hypeScale as any
                     } as any}
                     className="absolute z-20 bg-white text-dark px-8 py-4 rounded-full font-black text-4xl md:text-6xl uppercase tracking-tighter"
                 >
