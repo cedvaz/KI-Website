@@ -119,16 +119,6 @@ const About: React.FC = () => {
               MEINUNGEN
             </ScrollTextLine>
 
-            {/* Profile Image - Revealed at end, Centered over the layout */}
-            <motion.div
-              style={{ opacity: imageOpacity, scale: imageScale, rotate: imageRotate }}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[30vw] md:h-[30vw] z-20 pointer-events-none"
-            >
-              <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl bg-dark/80 backdrop-blur-sm">
-                <img src="/cedric-profile.png" className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700" alt="Cedric" />
-                <div className="absolute inset-0 bg-tiger mix-blend-overlay opacity-20"></div>
-              </div>
-            </motion.div>
 
           </div>
 
