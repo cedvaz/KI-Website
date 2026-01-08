@@ -42,19 +42,17 @@ const App: React.FC = () => {
 
         <Services />
 
-        <Modules />
+        <About />
+
+        <Process />
 
         <Methodology />
+
+        <Modules />
 
         <Testimonials />
 
         <ScrollWord />
-
-        {/* Quirky Industry Section (Proof) */}
-
-        <Process />
-
-        <About />
       </main>
       <Footer />
 
