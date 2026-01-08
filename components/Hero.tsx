@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
                   delay: index * 0.1,
                   ease: [0.22, 1, 0.36, 1]
                 }}
-                className={`text-[12vw] md:text-[5rem] lg:text-[6.5rem] leading-[0.85] font-black tracking-tighter uppercase whitespace-nowrap select-none ${roleColors[index % roleColors.length]} hover:translate-x-4 transition-transform cursor-default`}
+                className={`text-[10vw] md:text-[5rem] lg:text-[6.5rem] leading-[0.85] font-black tracking-tighter uppercase whitespace-nowrap select-none ${roleColors[index % roleColors.length]} hover:translate-x-4 transition-transform cursor-default`}
               >
                 {role}
               </MotionH1>

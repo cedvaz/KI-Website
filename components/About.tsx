@@ -67,7 +67,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.0, 0.15]}
-              className="text-[9vw] md:text-[7vw]"
+              className="text-[7.5vw] md:text-[7vw]"
             >
               SEIT ÜBER 10 JAHREN
             </ScrollTextLine>
@@ -75,7 +75,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.15, 0.3]}
-              className="text-[9vw] md:text-[7vw]"
+              className="text-[7.5vw] md:text-[7vw]"
             >
               BEGLEITE ICH KMUS
             </ScrollTextLine>
@@ -83,7 +83,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.3, 0.45]}
-              className="text-[9vw] md:text-[7vw]"
+              className="text-[7.5vw] md:text-[7vw]"
             >
               IM MARKETING & VERTRIEB
             </ScrollTextLine>
@@ -94,7 +94,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.45, 0.6]}
-              className="text-[16vw] leading-[0.8]"
+              className="text-[12vw] md:text-[16vw] leading-[0.8]"
               filledClassName="text-tiger"
               outlineColor="rgba(254, 98, 55, 0.3)"
             >
@@ -104,7 +104,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.6, 0.75]}
-              className="text-[16vw] leading-[0.8] mix-blend-difference z-30"
+              className="text-[12vw] md:text-[16vw] leading-[0.8] mix-blend-difference z-30"
             >
               SCHLAGEN
             </ScrollTextLine>
@@ -112,7 +112,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.75, 0.9]}
-              className="text-[16vw] leading-[0.8]"
+              className="text-[12vw] md:text-[16vw] leading-[0.8]"
               filledClassName="text-tiger"
               outlineColor="rgba(254, 98, 55, 0.3)"
             >
