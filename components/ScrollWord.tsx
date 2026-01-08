@@ -33,7 +33,7 @@ const ScrollWord: React.FC = () => {
                         y: layer1Y,
                         scale
                     } as any}
-                    className="absolute inset-0 flex items-center justify-center text-[25vw] font-black text-tiger select-none pointer-events-none uppercase tracking-tighter italic"
+                    className="absolute inset-0 flex items-center justify-center text-[20vw] md:text-[25vw] font-black text-tiger select-none pointer-events-none uppercase tracking-tighter italic"
                 >
                     UNFUCK
                 </motion.div>
@@ -45,14 +45,14 @@ const ScrollWord: React.FC = () => {
                         y: layer2Y,
                         scale
                     } as any}
-                    className="absolute inset-0 flex items-center justify-center text-[25vw] font-black text-maya select-none pointer-events-none uppercase tracking-tighter italic"
+                    className="absolute inset-0 flex items-center justify-center text-[20vw] md:text-[25vw] font-black text-maya select-none pointer-events-none uppercase tracking-tighter italic"
                 >
                     UNFUCK
                 </motion.div>
 
                 {/* Main Outline Text */}
                 <motion.div
-                    className="relative z-10 text-[25vw] font-black text-transparent select-none pointer-events-none uppercase tracking-tighter italic"
+                    className="relative z-10 text-[20vw] md:text-[25vw] font-black text-transparent select-none pointer-events-none uppercase tracking-tighter italic"
                     style={{
                         WebkitTextStroke: '2px white',
                         letterSpacing: letterSpacing as any,
