@@ -69,7 +69,7 @@ const ScrollWord: React.FC = () => {
                     style={{
                         opacity: useTransform(scrollYProgress, [0.4, 0.5, 0.6], [0, 1, 0])
                     } as any}
-                    className="absolute z-20 bg-white text-dark px-6 py-2 rounded-full font-black text-xl md:text-3xl uppercase tracking-tighter"
+                    className="absolute z-20 bg-white text-dark px-8 py-4 rounded-full font-black text-4xl md:text-6xl uppercase tracking-tighter"
                 >
                     the hype
                 </motion.div>
