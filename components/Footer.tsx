@@ -40,8 +40,8 @@ const Footer: React.FC = () => {
             <div>
               <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Social</h5>
               <ul className="space-y-4 font-bold uppercase text-sm tracking-widest">
-                <li><a href="#" className="text-white/40 hover:text-sapphire transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="text-white/40 hover:text-maya transition-colors">Twitter / X</a></li>
+                <li><a href="https://www.linkedin.com/in/cedric-vazquez-boo/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-sapphire transition-colors">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/vazced/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-maya transition-colors">Instagram</a></li>
                 <li><a href="#" className="text-white/40 hover:text-tiger transition-colors">Newsletter</a></li>
               </ul>
             </div>
