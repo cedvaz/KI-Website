@@ -9,7 +9,8 @@ const ScrollTextLine = ({
   range,
   className = "",
   filledClassName = "text-white",
-  outlineColor = "rgba(255,255,255,0.2)"
+  outlineColor = "rgba(255,255,255,0.2)",
+  allowWrap = false
 }: {
   children: React.ReactNode;
   progress: MotionValue<number>;
@@ -17,8 +18,33 @@ const ScrollTextLine = ({
   className?: string;
   filledClassName?: string;
   outlineColor?: string;
+  allowWrap?: boolean;
 }) => {
   const opacity = useTransform(progress, range, [0, 1]);
+
+  if (allowWrap) {
+    return (
+      <div className={`relative inline-block ${className}`}>
+        {/* Outline Layer (Always Visible as base) */}
+        <span
+          className="text-transparent whitespace-normal md:whitespace-nowrap block"
+          style={{
+            WebkitTextStroke: `1px ${outlineColor}`,
+          }}
+        >
+          {children}
+        </span>
+
+        {/* Filled Layer (Reveals on scroll) */}
+        <motion.span
+          style={{ opacity }}
+          className={`absolute top-0 left-0 whitespace-normal md:whitespace-nowrap block ${filledClassName}`}
+        >
+          {children}
+        </motion.span>
+      </div>
+    );
+  }
 
   return (
     <div className={`relative whitespace-nowrap ${className}`}>
@@ -67,7 +93,8 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.0, 0.15]}
-              className="text-[7.5vw] md:text-[7vw]"
+              className="text-[9vw] md:text-[7vw]"
+              allowWrap={true}
             >
               SEIT ÜBER 10 JAHREN
             </ScrollTextLine>
@@ -75,7 +102,8 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.15, 0.3]}
-              className="text-[7.5vw] md:text-[7vw]"
+              className="text-[9vw] md:text-[7vw]"
+              allowWrap={true}
             >
               BEGLEITE ICH KMUS
             </ScrollTextLine>
@@ -83,7 +111,8 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.3, 0.45]}
-              className="text-[7.5vw] md:text-[7vw]"
+              className="text-[9vw] md:text-[7vw]"
+              allowWrap={true}
             >
               IM MARKETING & VERTRIEB
             </ScrollTextLine>
