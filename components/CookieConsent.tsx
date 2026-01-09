@@ -76,7 +76,7 @@ const CookieConsent: React.FC = () => {
               <p className="text-white/50 text-sm md:text-base leading-relaxed max-w-5xl">
                 Unsere Website verwendet Cookies und ähnliche Technologien, um die Grundfunktionen zu gewährleisten und dein Nutzererlebnis zu verbessern. 
                 Du kannst wählen, welche Kategorien du zulassen möchtest. Weitere Details findest du in unserer{' '}
-                <a href="#" className="text-white underline hover:text-tiger transition-colors">Datenschutzerklärung</a>.
+                <a href="#datenschutz" className="text-white underline hover:text-tiger transition-colors">Datenschutzerklärung</a>.
               </p>
             </div>
 

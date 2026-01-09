@@ -51,8 +51,8 @@ const Footer: React.FC = () => {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-white/10">
           <div>© 2026 Cedric KI – Marketing & Vertrieb mit KI</div>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Impressum</a>
-            <a href="#" className="hover:text-white transition-colors">Datenschutz</a>
+            <a href="#impressum" className="hover:text-white transition-colors">Impressum</a>
+            <a href="#datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
           </div>
         </div>
       </div>

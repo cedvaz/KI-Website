@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,8 +12,44 @@ import About from './components/About';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import ScrollWord from './components/ScrollWord';
+import Datenschutz from './components/Datenschutz';
+import Impressum from './components/Impressum';
 
 const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<string>('home');
+
+  useEffect(() => {
+    // Check hash on mount
+    const hash = window.location.hash.slice(1);
+    if (hash === 'datenschutz' || hash === 'impressum') {
+      setCurrentPage(hash);
+    }
+
+    // Listen for hash changes
+    const handleHashChange = () => {
+      const newHash = window.location.hash.slice(1);
+      if (newHash === 'datenschutz' || newHash === 'impressum') {
+        setCurrentPage(newHash);
+      } else {
+        setCurrentPage('home');
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Render Datenschutz page
+  if (currentPage === 'datenschutz') {
+    return <Datenschutz />;
+  }
+
+  // Render Impressum page
+  if (currentPage === 'impressum') {
+    return <Impressum />;
+  }
+
+  // Default home page
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
