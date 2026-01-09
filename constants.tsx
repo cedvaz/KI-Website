@@ -147,17 +147,17 @@ export const TESTIMONIALS: Testimonial[] = [
 export const PROCESS: ProcessStep[] = [
   {
     title: "Kurzcall",
-    description: "Wir klären Ziel und Kontext in 15 Minuten.",
+    description: "Wir klären in 15 Minuten euer Ziel, den aktuellen Stand und den Kontext – damit ich genau verstehe, was ihr braucht.",
     icon: "📞"
   },
   {
     title: "Umsetzung",
-    description: "Keynote oder Deep-Dive Workshop.",
+    description: "Keynote für den Überblick oder Deep-Dive Workshop, wo wir live eure Workflows bauen und direkt umsetzen.",
     icon: "🛠️"
   },
   {
     title: "Package",
-    description: "Templates, Recap und Next Steps geliefert.",
+    description: "Templates, Prompts, Recap-Dokumentation und konkrete Next Steps – alles, was ihr braucht, um direkt weiterzumachen.",
     icon: "📦"
   }
 ];
