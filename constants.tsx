@@ -117,11 +117,11 @@ export const WORKSHOP_PRODUCTS: WorkshopProduct[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     author: "Matthias Hiller",
-    role: "Geschäftsführer @ Schorer und Wolf",
-    text: "Früher haben wir KI punktuell genutzt, heute ist es das Rückgrat unserer Prozesse. Cedric hat uns gezeigt, wie wir die gesamte Marketing-Pipeline strukturieren, sodass wir 4x schneller Content produzieren, ohne dass die Qualität leidet. Ein echter Gamechanger für unsere interne Effizienz.",
+    role: "Marketing Leiter @ Schorer und Wolf",
+    text: "Cedric versteht, dass es nicht um Tools geht, sondern um Haltung. Wir produzieren jetzt High-End Content on Brand, der nicht nach billiger KI aussehen. Seine Workshops sind intensiv, direkt und liefern Ergebnisse, die man sofort umsetzen kann. Keine Theorie, sondern pure Praxis.",
     stats: [
-      { label: "Content Output", value: "+400%" },
-      { label: "Zeitersparnis", value: "15h/Woche" }
+      { label: "Brand Integrity", value: "100%" },
+      { label: "Production Cost", value: "-60%" }
     ]
   },
   {
@@ -129,17 +129,17 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "CEO @ cvift",
     text: "KI im Vertrieb war für uns immer ein Buzzword, bis wir den Sales-Workflow mit Cedric gebaut haben. Die Recherche-Automatisierung und die KI-gestützte Vorbereitung von Terminen haben die Schlagzahl massiv erhöht. Wir verschwenden keine Zeit mehr mit manueller Fleißarbeit.",
     stats: [
-      { label: "Sales Efficiency", value: "+85%" },
+      { label: "Sales Efficiency", value: "+35%" },
       { label: "Lead Response", value: "< 2 Min" }
     ]
   },
   {
     author: "Dominik Grätz",
     role: "Inhaber @ digital new x",
-    text: "Cedric versteht, dass es nicht um Tools geht, sondern um Haltung. Wir produzieren jetzt High-End Content on Brand, der nicht nach billiger KI aussehen. Seine Workshops sind intensiv, direkt und liefern Ergebnisse, die man sofort umsetzen kann. Keine Theorie, sondern pure Praxis.",
+    text: "Früher haben wir KI punktuell genutzt, heute ist es das Rückgrat unserer Prozesse. Cedric hat uns gezeigt, wie wir die gesamte Marketing-Pipeline strukturieren, sodass wir 4x schneller Content produzieren, ohne dass die Qualität leidet. Ein echter Gamechanger für unsere interne Effizienz.",
     stats: [
-      { label: "Brand Integrity", value: "100%" },
-      { label: "Production Cost", value: "-60%" }
+      { label: "Content Output", value: "+400%" },
+      { label: "Zeitersparnis", value: "6h/Woche" }
     ]
   }
 ];

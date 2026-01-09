@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung | AI Marketing & Sales</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            tiger: '#FE6237',
+            sunflower: '#FFBA25',
+            maya: '#7CC3FF',
+            sapphire: '#4164FF',
+            dark: '#0A0A0A',
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      scroll-padding-top: 120px;
+    }
+
+    section {
+      scroll-margin-top: 120px;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, #FE6237, #FFBA25, #7CC3FF, #4164FF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    ::selection {
+      background: #FFBA25;
+      color: #0A0A0A;
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-white font-sans antialiased overflow-x-hidden">
+  <div id="datenschutz-content" class="min-h-screen bg-dark text-white">
+    <nav class="fixed top-0 left-0 right-0 z-[100] px-4 py-4 md:py-6 pointer-events-none">
+      <div class="mx-auto max-w-7xl flex flex-col items-center">
+        <div class="pointer-events-auto flex items-center gap-3 md:gap-8 px-3 md:px-6 py-2 rounded-2xl md:rounded-full border transition-all duration-500 bg-dark/95 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] border-white/20 scale-95 md:scale-100">
+          <a href="/" class="flex items-center gap-3 pr-2 border-r border-white/10 group focus:outline-none">
+            <div class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-tr from-tiger via-sunflower to-sapphire transition-transform group-hover:scale-110"></div>
+            <span class="font-black text-[10px] tracking-widest uppercase hidden sm:block text-white/80">Cedric</span>
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a href="/#services" class="text-[10px] font-black uppercase tracking-[0.2em] transition-all text-white/40 hover:text-white/70">Dienste</a>
+            <a href="/#workshops" class="text-[10px] font-black uppercase tracking-[0.2em] transition-all text-white/40 hover:text-white/70">Workshops</a>
+            <a href="/#methodology" class="text-[10px] font-black uppercase tracking-[0.2em] transition-all text-white/40 hover:text-white/70">Haltung</a>
+          </div>
+
+          <a href="/#contact" class="group relative px-4 md:px-6 py-2 rounded-xl md:rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 focus:outline-none bg-sapphire text-white shadow-[0_10px_20px_-5px_rgba(65,100,255,0.4)]">
+            <span class="relative z-10 text-[9px] md:text-[10px] font-black uppercase tracking-widest">Jetzt anfragen</span>
+          </a>
+        </div>
+      </nav>
+
+    <main class="pt-32 pb-24 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-12">
+          <h1 class="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter">
+            Datenschutzerklärung
+          </h1>
+          <div class="w-24 h-1 bg-tiger"></div>
+          <p class="text-white/60 mt-6 text-sm">
+            Stand: 9. Januar 2026
+          </p>
+        </div>
+
+        <div class="prose prose-invert max-w-none space-y-8">
+          <section class="space-y-4">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-4">1. Verantwortlicher</h2>
+            <div class="space-y-2 text-white/80 leading-relaxed">
+              <p>
+                <strong>Verantwortlich für die Datenverarbeitung:</strong>
+              </p>
+              <p>
+                Cedric Vazquez Boo<br />
+                Am Frickenland 4<br />
+                87437 Kempten<br />
+                Deutschland<br />
+                E-Mail: <a href="mailto:hi@cedric-ki.de" class="text-tiger hover:text-sunflower transition-colors underline">hi@cedric-ki.de</a>
+              </p>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-4">2. Allgemeine Hinweise zur Datenverarbeitung</h2>
+            <div class="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. In dieser Datenschutzerklärung informieren wir Sie über die Verarbeitung personenbezogener Daten bei der Nutzung unserer Website.
+              </p>
+              <p>
+                Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Maßgeblich für die Datenschutz-Grundverordnung (DSGVO), das Bundesdatenschutzgesetz (BDSG) und das Telekommunikation-Telemedien-Datenschutz-Gesetz (TTDSG) ist die folgende Definition:
+              </p>
+              <p class="pl-4 border-l-2 border-tiger/50">
+                Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.
+              </p>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-4">3. Datenverarbeitung beim Besuch unserer Website</h2>
+            <div class="space-y-4 text-white/80 leading-relaxed">
+              <h3 class="text-xl font-bold text-white mt-6 mb-2">3.1 Hosting</h3>
+              <p>
+                Diese Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA gehostet. Beim Aufruf unserer Website werden automatisch Verbindungsdaten verarbeitet. Hierzu gehören:
+              </p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>IP-Adresse des anfragenden Rechners</li>
+                <li>Datum und Uhrzeit des Zugriffs</li>
+                <li>Name und URL der abgerufenen Datei</li>
+                <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
+                <li>verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
+              </ul>
+              <p>
+                Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur Wahrung unserer berechtigten Interessen an der Verbesserung der Stabilität und Funktionalität unserer Website. Die Daten werden für die Dauer von 30 Tagen gespeichert.
+              </p>
+              <p class="text-sm text-white/60 mt-4">
+                <strong>Hinweis:</strong> Vercel verarbeitet Daten in den USA. Es besteht ein Angemessenheitsbeschluss der EU-Kommission (EU-US Data Privacy Framework). Weitere Informationen finden Sie unter: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-tiger hover:text-sunflower transition-colors underline">https://vercel.com/legal/privacy-policy</a>
+              </p>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-4">4. Kontaktformular und E-Mail-Kommunikation</h2>
+            <div class="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                Wenn Sie uns per E-Mail oder über ein Kontaktformular kontaktieren, werden die von Ihnen mitgeteilten Daten (E-Mail-Adresse, ggf. Name, Telefonnummer) von uns gespeichert, um Ihre Fragen zu beantworten.
+              </p>
+              <p>
+                <strong>Rechtsgrundlage:</strong> Die Verarbeitung der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), sofern diese abgefragt wurde.
+              </p>
+              <p>
+                <strong>Speicherdauer:</strong> Die von Ihnen übermittelten Daten bleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
+              </p>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-4">5. Cookies</h2>
+            <div class="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                Wir setzen auf unserer Website Cookies ein. Hierbei handelt es sich um kleine Dateien, die Ihr Browser automatisch erstellt und die auf Ihrem Endgerät (Laptop, Tablet, Smartphone o. ä.) gespeichert werden, wenn Sie unsere Website besuchen.
+              </p>
+              <h3 class="text-xl font-bold text-white mt-6 mb-2">5.1 Technisch notwendige Cookies</h3>
+              <p>
+                Wir setzen technisch notwendige Cookies ein, um die Grundfunktionen unserer Website sicherzustellen. Diese Cookies sind für den Betrieb der Website erforderlich und können nicht deaktiviert werden.
+              </p>
+              <p>
+                <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Funktionsfähigkeit der Website).
+              </p>
+              <h3 class="text-xl font-bold text-white mt-6 mb-2">5.2 Cookie-Einstellungen</h3>
+              <p>
+                Sie können Ihre Cookie-Einstellungen jederzeit über den Cookie-Banner anpassen. Zusätzlich können Sie in Ihren Browser-Einstellungen festlegen, ob Cookies gespeichert werden sollen oder nicht.
+              </p>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-4">6. Ihre Rechte</h2>
+            <div class="space-y-4 text-white/80 leading-relaxed">
+              <p>Sie haben folgende Rechte:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>
+                  <strong>Auskunftsrecht (Art. 15 DSGVO):</strong> Sie haben das Recht, Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten zu erhalten.
+                </li>
+                <li>
+                  <strong>Berichtigungsrecht (Art. 16 DSGVO):</strong> Sie haben das Recht, die Berichtigung unrichtiger oder die Vervollständigung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen.
+                </li>
+                <li>
+                  <strong>Löschungsrecht (Art. 17 DSGVO):</strong> Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten zu verlangen, soweit nicht gesetzliche Aufbewahrungspflichten bestehen.
+                </li>
+                <li>
+                  <strong>Einschränkung der Verarbeitung (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
+                </li>
+                <li>
+                  <strong>Datenübertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, Ihre personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.
+                </li>
+                <li>
+                  <strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Ihrer personenbezogenen Daten, die aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen.
+                </li>
+                <li>
+                  <strong>Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO):</strong> Sie haben das Recht, Ihre einmal erteilte Einwilligung jederzeit gegenüber uns zu widerrufen. Dies hat zur Folge, dass wir die Datenverarbeitung, die auf dieser Einwilligung beruhte, für die Zukunft nicht mehr fortführen dürfen.
+                </li>
+                <li>
+                  <strong>Beschwerderecht (Art. 77 DSGVO):</strong> Sie haben das Recht, sich bei einer Aufsichtsbehörde über unsere Verarbeitung personenbezogener Daten zu beschweren.
+                </li>
+              </ul>
+              <p class="mt-4">
+                Um Ihre Rechte auszuüben, kontaktieren Sie uns bitte unter: <a href="mailto:hi@cedric-ki.de" class="text-tiger hover:text-sunflower transition-colors underline">hi@cedric-ki.de</a>
+              </p>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-4">7. Datensicherheit</h2>
+            <div class="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre personenbezogenen Daten vor Verlust, Zerstörung, Manipulation und unberechtigtem Zugriff zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung fortlaufend verbessert.
+              </p>
+              <p>
+                Die Übertragung von Daten im Internet erfolgt grundsätzlich über eine verschlüsselte Verbindung (HTTPS/TLS).
+              </p>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-4">8. Änderungen dieser Datenschutzerklärung</h2>
+            <div class="space-y-4 text-white/80 leading-relaxed">
+              <p>
+                Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
+              </p>
+            </div>
+          </section>
+
+          <section class="mt-12 pt-8 border-t border-white/10">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-white mb-4">Kontakt</h2>
+            <div class="space-y-2 text-white/80 leading-relaxed">
+              <p>
+                Bei Fragen zum Datenschutz können Sie sich jederzeit an uns wenden:
+              </p>
+              <p>
+                <strong>Cedric Vazquez Boo</strong><br />
+                Am Frickenland 4<br />
+                87437 Kempten<br />
+                Deutschland<br />
+                E-Mail: <a href="mailto:hi@cedric-ki.de" class="text-tiger hover:text-sunflower transition-colors underline">hi@cedric-ki.de</a>
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="pt-32 pb-12 px-6 border-t border-white/5 bg-dark">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row justify-between items-start gap-16 mb-24">
+          <div class="max-w-2xl">
+            <div class="space-y-6 mb-12">
+              <p class="text-2xl md:text-3xl font-bold text-white leading-tight">
+                KI ist kein Tool Thema.<br />
+                Es ist ein Struktur Thema.
+              </p>
+              <p class="text-xl text-white/50 leading-relaxed max-w-xl">
+                Ich unterstütze Unternehmen dabei, Marketing und Vertrieb so zu bauen,
+                dass KI Arbeit abnimmt – statt neue zu erzeugen.
+              </p>
+            </div>
+
+            <div class="pt-8 border-t border-white/10">
+              <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 block mb-4">Direktkontakt</span>
+              <a href="mailto:hi@cedric-ki.de" class="text-2xl md:text-3xl font-black hover:text-tiger transition-colors underline underline-offset-8 decoration-white/10 hover:decoration-tiger">
+                hi@cedric-ki.de
+              </a>
+            </div>
+
+            <div class="pt-8">
+              <a
+                href="https://app.cal.eu/cedvaz/30min?overlayCalendar=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-4 px-8 py-4 bg-tiger text-white rounded-2xl font-black text-lg uppercase tracking-wider hover:bg-sunflower hover:scale-105 transition-all shadow-lg hover:shadow-xl"
+              >
+                <span>→ 30 Min Call buchen</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-x-12 md:gap-x-24 gap-y-12">
+            <div>
+              <h5 class="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Navigation</h5>
+              <ul class="space-y-4 font-bold uppercase text-sm tracking-widest">
+                <li><a href="/#services" class="text-white/40 hover:text-tiger transition-colors">Dienste</a></li>
+                <li><a href="/#workshops" class="text-white/40 hover:text-sunflower transition-colors">Workshops</a></li>
+                <li><a href="/#methodology" class="text-white/40 hover:text-maya transition-colors">Haltung</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Social</h5>
+              <ul class="space-y-4 font-bold uppercase text-sm tracking-widest">
+                <li><a href="https://www.linkedin.com/in/cedric-vazquez-boo/" target="_blank" rel="noopener noreferrer" class="text-white/40 hover:text-sapphire transition-colors">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/vazced/" target="_blank" rel="noopener noreferrer" class="text-white/40 hover:text-maya transition-colors">Instagram</a></li>
+                <li><a href="#" class="text-white/40 hover:text-tiger transition-colors">Newsletter</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-white/10">
+          <div>© 2026 Cedric KI – Marketing & Vertrieb mit KI</div>
+          <div class="flex gap-8">
+            <a href="/impressum" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+              Impressum
+            </a>
+            <a href="/datenschutz" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+              Datenschutz
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
