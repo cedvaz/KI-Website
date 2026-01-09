@@ -86,7 +86,7 @@ const About: React.FC = () => {
   return (
     <>
       <section ref={containerRef} id="about" className="relative h-[400vh] bg-dark">
-        <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4">
+        <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 pt-32 md:pt-40">
 
           <div className="relative z-10 flex flex-col items-center font-black italic tracking-tighter leading-[0.9] cursor-default text-center w-full max-w-[100vw]">
 
