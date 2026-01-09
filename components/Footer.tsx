@@ -22,8 +22,8 @@ const Footer: React.FC = () => {
 
             <div className="pt-8 border-t border-white/10">
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 block mb-4">Direktkontakt</span>
-              <a href="mailto:hallo@cedric-ki.de" className="text-2xl md:text-3xl font-black hover:text-tiger transition-colors underline underline-offset-8 decoration-white/10 hover:decoration-tiger">
-                hallo@cedric-ki.de
+              <a href="mailto:hi@cedric-ki.de" className="text-2xl md:text-3xl font-black hover:text-tiger transition-colors underline underline-offset-8 decoration-white/10 hover:decoration-tiger">
+                hi@cedric-ki.de
               </a>
             </div>
           </div>
