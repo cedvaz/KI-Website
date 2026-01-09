@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="mb-8 font-black text-white/40 uppercase tracking-[0.4em] text-xs md:text-sm"
           >
-            Marketing & Sales Intelligence
+            Marketing & Vertrieb mit KI
           </MotionDiv>
 
           <div className="flex flex-col gap-0 mb-12">
