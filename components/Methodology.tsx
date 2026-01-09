@@ -24,6 +24,20 @@ const Methodology: React.FC = () => {
     }
   ];
 
+  const borderColors = [
+    'border-tiger/40 hover:border-tiger',
+    'border-sunflower/40 hover:border-sunflower',
+    'border-maya/40 hover:border-maya',
+    'border-sapphire/40 hover:border-sapphire'
+  ];
+
+  const numberBgColors = [
+    'group-hover:bg-tiger group-hover:border-tiger',
+    'group-hover:bg-sunflower group-hover:border-sunflower',
+    'group-hover:bg-maya group-hover:border-maya',
+    'group-hover:bg-sapphire group-hover:border-sapphire'
+  ];
+
   return (
     <section id="methodology" className="relative py-40 px-6 bg-dark overflow-hidden">
       {/* Background Decor - Subtle gradient glow behind the quote area */}
@@ -60,9 +74,9 @@ const Methodology: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="p-8 md:p-10 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-white/20 transition-all flex flex-col gap-6 group"
+                className={`p-8 md:p-10 rounded-3xl bg-white/[0.03] border ${borderColors[idx]} transition-all flex flex-col gap-6 group`}
               >
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40 font-black text-xs group-hover:bg-tiger group-hover:text-white group-hover:border-tiger transition-all">
+                <div className={`w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40 font-black text-xs ${numberBgColors[idx]} group-hover:text-white transition-all`}>
                   0{idx + 1}
                 </div>
                 <div>
