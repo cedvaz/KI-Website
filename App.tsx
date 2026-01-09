@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Navbar from './components/Navbar';
@@ -15,41 +14,7 @@ import ScrollWord from './components/ScrollWord';
 import Datenschutz from './components/Datenschutz';
 import Impressum from './components/Impressum';
 
-const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<string>('home');
-
-  useEffect(() => {
-    // Check hash on mount
-    const hash = window.location.hash.slice(1);
-    if (hash === 'datenschutz' || hash === 'impressum') {
-      setCurrentPage(hash);
-    }
-
-    // Listen for hash changes
-    const handleHashChange = () => {
-      const newHash = window.location.hash.slice(1);
-      if (newHash === 'datenschutz' || newHash === 'impressum') {
-        setCurrentPage(newHash);
-      } else {
-        setCurrentPage('home');
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  // Render Datenschutz page
-  if (currentPage === 'datenschutz') {
-    return <Datenschutz />;
-  }
-
-  // Render Impressum page
-  if (currentPage === 'impressum') {
-    return <Impressum />;
-  }
-
-  // Default home page
+const HomePage: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -103,6 +68,60 @@ const App: React.FC = () => {
       `}</style>
     </div>
   );
+};
+
+const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<string>('home');
+
+  useEffect(() => {
+    // Check hash on mount
+    const checkHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash === 'datenschutz') {
+        setCurrentPage('datenschutz');
+      } else if (hash === 'impressum') {
+        setCurrentPage('impressum');
+      } else {
+        setCurrentPage('home');
+      }
+    };
+
+    // Initial check
+    checkHash();
+
+    // Listen for hash changes
+    const handleHashChange = () => {
+      checkHash();
+    };
+
+    // Also check periodically to catch any missed changes
+    const interval = setInterval(() => {
+      const currentHash = window.location.hash.slice(1);
+      if ((currentHash === 'datenschutz' && currentPage !== 'datenschutz') ||
+          (currentHash === 'impressum' && currentPage !== 'impressum') ||
+          (currentHash === '' && currentPage !== 'home')) {
+        checkHash();
+      }
+    }, 100);
+
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      clearInterval(interval);
+    };
+  }, [currentPage]);
+
+  // Render based on current page
+  if (currentPage === 'datenschutz') {
+    return <Datenschutz />;
+  }
+
+  if (currentPage === 'impressum') {
+    return <Impressum />;
+  }
+
+  return <HomePage />;
 };
 
 export default App;
