@@ -39,7 +39,16 @@ const Impressum: React.FC = () => {
                   Marketing & Vertrieb mit KI
                 </p>
                 <p>
+                  Am Frickenland 4<br />
+                  87437 Kempten<br />
+                  Deutschland
+                </p>
+                <p>
                   E-Mail: <a href="mailto:hi@cedric-ki.de" className="text-tiger hover:text-sunflower transition-colors underline">hi@cedric-ki.de</a>
+                </p>
+                <p className="mt-4">
+                  <strong>Umsatzsteuer-Identifikationsnummer:</strong><br />
+                  UG in Gründung
                 </p>
               </div>
             </section>
@@ -90,6 +99,9 @@ const Impressum: React.FC = () => {
                 </p>
                 <p>
                   <strong>Cedric Vazquez Boo</strong><br />
+                  Am Frickenland 4<br />
+                  87437 Kempten<br />
+                  Deutschland<br />
                   E-Mail: <a href="mailto:hi@cedric-ki.de" className="text-tiger hover:text-sunflower transition-colors underline">hi@cedric-ki.de</a>
                 </p>
               </div>

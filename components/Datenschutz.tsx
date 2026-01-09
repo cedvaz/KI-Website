@@ -41,6 +41,9 @@ const Datenschutz: React.FC = () => {
                 </p>
                 <p>
                   Cedric Vazquez Boo<br />
+                  Am Frickenland 4<br />
+                  87437 Kempten<br />
+                  Deutschland<br />
                   E-Mail: <a href="mailto:hi@cedric-ki.de" className="text-tiger hover:text-sunflower transition-colors underline">hi@cedric-ki.de</a>
                 </p>
               </div>
@@ -192,6 +195,9 @@ const Datenschutz: React.FC = () => {
                 </p>
                 <p>
                   <strong>Cedric Vazquez Boo</strong><br />
+                  Am Frickenland 4<br />
+                  87437 Kempten<br />
+                  Deutschland<br />
                   E-Mail: <a href="mailto:hi@cedric-ki.de" className="text-tiger hover:text-sunflower transition-colors underline">hi@cedric-ki.de</a>
                 </p>
               </div>
