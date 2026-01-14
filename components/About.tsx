@@ -123,7 +123,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.45, 0.6]}
-              className="text-[18vw] md:text-[16vw] leading-[0.7]"
+              className="text-[16vw] md:text-[16vw] leading-[0.7]"
               filledClassName="text-tiger"
               outlineColor="rgba(254, 98, 55, 0.3)"
             >
@@ -133,7 +133,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.6, 0.75]}
-              className="text-[18vw] md:text-[16vw] leading-[0.7] mix-blend-difference z-30"
+              className="text-[16vw] md:text-[16vw] leading-[0.7] mix-blend-difference z-30"
             >
               SCHLAGEN
             </ScrollTextLine>
@@ -141,7 +141,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.75, 0.9]}
-              className="text-[18vw] md:text-[16vw] leading-[0.7]"
+              className="text-[16vw] md:text-[16vw] leading-[0.7]"
               filledClassName="text-tiger"
               outlineColor="rgba(254, 98, 55, 0.3)"
             >
