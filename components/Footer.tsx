@@ -41,8 +41,7 @@ const Footer: React.FC = () => {
               <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 mb-6">Social</h5>
               <ul className="space-y-4 font-bold uppercase text-sm tracking-widest">
                 <li><a href="https://www.linkedin.com/in/cedric-vazquez-boo/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-sapphire transition-colors">LinkedIn</a></li>
-                <li><a href="https://www.instagram.com/vazced/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-maya transition-colors">Instagram</a></li>
-                <li><a href="#" className="text-white/40 hover:text-tiger transition-colors">Newsletter</a></li>
+                <li><a href="https://www.instagram.com/vazced/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-tiger transition-colors">Instagram</a></li>
               </ul>
             </div>
           </div>
@@ -51,8 +50,8 @@ const Footer: React.FC = () => {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-white/10">
           <div>© 2026 Cedric KI – Marketing & Vertrieb mit KI</div>
           <div className="flex gap-8">
-            <a 
-              href="#impressum" 
+            <a
+              href="#impressum"
               onClick={(e) => {
                 e.preventDefault();
                 window.location.hash = 'impressum';
@@ -61,8 +60,8 @@ const Footer: React.FC = () => {
             >
               Impressum
             </a>
-            <a 
-              href="#datenschutz" 
+            <a
+              href="#datenschutz"
               onClick={(e) => {
                 e.preventDefault();
                 window.location.hash = 'datenschutz';
