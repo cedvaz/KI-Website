@@ -62,7 +62,7 @@ const Testimonials: React.FC = () => {
                   </div>
 
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
-                    <div className="lg:col-span-7">
+                    <div className="lg:col-span-8">
                       <div className="mb-6">
                         <h3 className="text-3xl md:text-5xl font-black mb-1 uppercase tracking-tighter text-white">
                           {t.author}
@@ -71,27 +71,23 @@ const Testimonials: React.FC = () => {
                           {t.role}
                         </p>
                       </div>
-                      
-                      <p className="text-lg md:text-2xl text-white/70 leading-relaxed mb-10 italic font-medium">
-                        „{t.text}“
-                      </p>
 
-                      <div className="grid grid-cols-2 gap-3 md:gap-4">
-                        {t.stats.map((stat, sIdx) => (
-                          <div key={sIdx} className="bg-white/[0.03] border border-white/5 rounded-xl px-4 py-4 md:px-8 md:py-6 flex-1">
-                            <div className="text-xl md:text-4xl font-black text-white mb-1 tracking-tighter">
-                              {stat.value}
-                            </div>
-                            <div className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.1em] md:tracking-[0.2em] text-white/20">
-                              {stat.label}
-                            </div>
-                          </div>
-                        ))}
+                      <div className="relative">
+                        <div className="absolute -left-4 -top-4 text-6xl text-white/5 font-serif">"</div>
+                        <p className="text-lg md:text-2xl text-white/70 leading-relaxed font-medium pl-8">
+                          {t.text}
+                        </p>
+                        <div className="absolute -right-4 -bottom-8 text-6xl text-white/5 font-serif">"</div>
                       </div>
                     </div>
 
-                    <div className="hidden lg:block lg:col-span-5 relative aspect-square rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center">
-                       <span className="text-white/5 font-black text-6xl uppercase tracking-tighter">RESULT</span>
+                    <div className="hidden lg:block lg:col-span-4 relative flex items-center justify-center">
+                      <div className="relative">
+                        {/* Decorative quote mark */}
+                        <div className="text-8xl md:text-9xl text-tiger/10 font-serif leading-none">"</div>
+                        {/* Subtle gradient background */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-tiger/5 to-transparent rounded-full blur-2xl"></div>
+                      </div>
                     </div>
                   </div>
                 </MotionDiv>

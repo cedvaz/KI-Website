@@ -1,7 +1,7 @@
 
 import React from 'react';
 // Added Guide to the import list
-import { ServiceCard, WorkshopProduct, Testimonial, ProcessStep, SkillDetail, Guide } from './types';
+import { ServiceCard, WorkshopProduct, Testimonial, ProcessStep, SkillDetail, Guide, MediaExample, MediaTestimonial, MediaProcessStep, MediaMetric } from './types';
 
 export const HERO_ROLES = [
   "KEYNOTES",
@@ -118,7 +118,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     author: "Matthias Hiller",
     role: "Marketing Leiter @ Schorer und Wolf",
-    text: "Cedric versteht, dass es nicht um Tools geht, sondern um Haltung. Wir produzieren jetzt High-End Content on Brand, der nicht nach billiger KI aussehen. Seine Workshops sind intensiv, direkt und liefern Ergebnisse, die man sofort umsetzen kann. Keine Theorie, sondern pure Praxis.",
+    text: "Cedric versteht, dass es nicht um Tools geht, sondern um Haltung. Wir produzieren inzwischen deutlich effizienter Content, der zu unserer Marke passt. Seine Workshops sind intensiv, direkt und liefern Ergebnisse, die man sofort umsetzen kann. Keine Theorie, sondern pure Praxis.",
     stats: [
       { label: "Brand Integrity", value: "100%" },
       { label: "Production Cost", value: "-60%" }
@@ -173,5 +173,112 @@ export const GUIDES: Guide[] = [
     title: "KI im Vertrieb",
     description: "Vom Lead-Research bis zur personalisierten Ansprache. Ohne Spam-Feeling.",
     color: "maya"
+  }
+];
+
+// ============================================
+// MEDIA PAGE CONSTANTS
+// ============================================
+
+export const MEDIA_METRICS: MediaMetric[] = [
+  {
+    value: "+32%",
+    label: "Conversion-Lift",
+    color: "tiger"
+  },
+  {
+    value: "10x",
+    label: "Schnellere Produktion",
+    color: "sunflower"
+  },
+  {
+    value: "-60%",
+    label: "vs. Agentur-Kosten",
+    color: "maya"
+  }
+];
+
+export const MEDIA_PROCESS: MediaProcessStep[] = [
+  {
+    title: "Shooting",
+    description: "Professionelles Basis-Material vor Ort – optimiert für KI-Weiterverarbeitung.",
+    icon: "📸",
+    details: [
+      "Produkt-Fotografie",
+      "360° Aufnahmen",
+      "Video-Material"
+    ]
+  },
+  {
+    title: "KI-Post",
+    description: "Hintergründe, Varianten, Lifestyle-Settings – alles aus einem Shooting.",
+    icon: "🤖",
+    details: [
+      "Hintergrund-Generierung",
+      "Lifestyle-Szenen",
+      "Farb-Varianten"
+    ]
+  },
+  {
+    title: "Delivery",
+    description: "Fertige Assets für Shop, Ads & Social – in allen Formaten.",
+    icon: "🚀",
+    details: [
+      "E-Commerce optimiert",
+      "Social Media Formate",
+      "Ad Creatives"
+    ]
+  }
+];
+
+export const MEDIA_TESTIMONIALS: MediaTestimonial[] = [
+  // Testimonials werden hinzugefügt, sobald offizielle Referenzen vorliegen
+];
+
+export const MEDIA_EXAMPLES: MediaExample[] = [
+  {
+    id: 1,
+    type: 'image',
+    src: '/media/example-1.jpg',
+    title: 'Produkt-Shooting',
+    category: 'Bilder'
+  },
+  {
+    id: 2,
+    type: 'image',
+    src: '/media/example-2.jpg',
+    title: 'Lifestyle-Setting',
+    category: 'Bilder'
+  },
+  {
+    id: 3,
+    type: 'image',
+    src: '/media/example-3.jpg',
+    title: 'KI-Hintergrund',
+    category: 'Bilder'
+  },
+  {
+    id: 4,
+    type: 'video',
+    src: '/media/reel-1.mp4',
+    thumbnail: '/media/reel-1-thumb.jpg',
+    title: 'Produkt-Reel',
+    category: 'Reels'
+  },
+  {
+    id: 5,
+    type: 'video',
+    src: '/media/reel-2.mp4',
+    thumbnail: '/media/reel-2-thumb.jpg',
+    title: 'Lifestyle-Reel',
+    category: 'Reels'
+  },
+  {
+    id: 6,
+    type: 'video',
+    src: '/media/reel-3.mp4',
+    thumbnail: '/media/reel-3-thumb.jpg',
+    title: 'Behind the Scenes',
+    category: 'Reels'
   }
 ];

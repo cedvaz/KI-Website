@@ -47,3 +47,39 @@ export interface Guide {
   description: string;
   color: string;
 }
+
+// Media Page Types
+export interface MediaExample {
+  id: number;
+  type: 'image' | 'video';
+  src: string;
+  thumbnail?: string;
+  title: string;
+  category?: string;
+}
+
+export interface MediaTestimonial {
+  company: string;
+  logo?: string;
+  quote: string;
+  author: string;
+  role: string;
+  stats: {
+    label: string;
+    value: string;
+  }[];
+  color: string;
+}
+
+export interface MediaProcessStep {
+  title: string;
+  description: string;
+  icon: string;
+  details: string[];
+}
+
+export interface MediaMetric {
+  value: string;
+  label: string;
+  color: string;
+}

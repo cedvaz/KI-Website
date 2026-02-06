@@ -13,6 +13,7 @@ import CookieConsent from './components/CookieConsent';
 import ScrollWord from './components/ScrollWord';
 import Datenschutz from './components/Datenschutz';
 import Impressum from './components/Impressum';
+import MediaPage from './components/MediaPage';
 
 const HomePage: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -81,6 +82,8 @@ const App: React.FC = () => {
         setCurrentPage('datenschutz');
       } else if (hash === 'impressum') {
         setCurrentPage('impressum');
+      } else if (hash === 'media') {
+        setCurrentPage('media');
       } else {
         setCurrentPage('home');
       }
@@ -99,6 +102,7 @@ const App: React.FC = () => {
       const currentHash = window.location.hash.slice(1);
       if ((currentHash === 'datenschutz' && currentPage !== 'datenschutz') ||
           (currentHash === 'impressum' && currentPage !== 'impressum') ||
+          (currentHash === 'media' && currentPage !== 'media') ||
           (currentHash === '' && currentPage !== 'home')) {
         checkHash();
       }
@@ -119,6 +123,10 @@ const App: React.FC = () => {
 
   if (currentPage === 'impressum') {
     return <Impressum />;
+  }
+
+  if (currentPage === 'media') {
+    return <MediaPage />;
   }
 
   return <HomePage />;
