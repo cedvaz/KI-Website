@@ -72,18 +72,9 @@ const PersonalCloser: React.FC = () => {
           >
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-warm-gray">
               <img
-                src="/cedric-personal-2.jpg"
-                alt="Cedric Vazquez Boo – Bereit für den nächsten Workshop"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  target.parentElement!.classList.add('flex', 'items-center', 'justify-center');
-                  const placeholder = document.createElement('div');
-                  placeholder.className = 'text-center p-8';
-                  placeholder.innerHTML = '<div class="text-6xl mb-4">📸</div><p class="text-warm-dark/40 font-bold uppercase text-sm tracking-widest">Bild hier einsetzen</p>';
-                  target.parentElement!.appendChild(placeholder);
-                }}
+                src="/cedric-personal-2.avif"
+                alt="Cedric Vazquez Boo im Gespräch – authentisch und direkt"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             {/* Accent elements */}
