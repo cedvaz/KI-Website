@@ -89,9 +89,9 @@ const Hero: React.FC = () => {
           >
             {/* Image */}
             <img
-              src="/cedric-profile.png"
+              src="/cedric-personal-2.avif"
               alt="Cedric Vazquez Boo"
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
+              className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
             />
 
             {/* Overlay Gradient (Subtle) */}
