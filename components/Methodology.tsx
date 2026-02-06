@@ -7,20 +7,20 @@ const MotionDiv = motion.div as any;
 const Methodology: React.FC = () => {
   const principles = [
     {
-      title: "Klarheit vor Aktion",
-      desc: "Kein Einsatz von KI ohne ein sauberes Ziel. Erst verstehen, was erreicht werden soll – dann entscheiden, was sinnvoll ist."
+      title: "Erst verstehen, dann bauen",
+      desc: "Ich starte nicht mit Tools, sondern mit eurer Realität. Was ist das Ziel? Wo hakt es? Was funktioniert schon? Ohne das ist jede KI-Lösung Zufall."
     },
     {
-      title: "Struktur vor Automatisierung",
-      desc: "Bevor Prozesse automatisiert werden, müssen sie klar sein. KI verstärkt, was da ist – gutes wie schlechtes."
+      title: "Qualität schlägt Quantität",
+      desc: "Lieber einen Workflow, der sitzt, als fünf, die keiner nutzt. KI kann euer Marketing auf ein neues Level heben – aber nur, wenn die Basis stimmt."
     },
     {
-      title: "Umsetzung im Alltag",
-      desc: "Systeme müssen vom Team genutzt werden. Nicht erklärt, sondern angewendet."
+      title: "Euer Team muss es können",
+      desc: "Ich baue nichts, was nur ich bedienen kann. Am Ende des Workshops arbeitet euer Team eigenständig – ohne mich, ohne Agentur."
     },
     {
-      title: "Weniger, aber richtig",
-      desc: "Lieber ein funktionierender Ablauf als fünf halbe Lösungen ohne Wirkung."
+      title: "Ehrlich statt gefällig",
+      desc: "Wenn eine Idee Quatsch ist, sag ich das. Wenn KI nicht die Lösung ist, auch. Ihr bezahlt mich nicht fürs Nicken, sondern fürs Mitdenken."
     }
   ];
 
@@ -60,7 +60,7 @@ const Methodology: React.FC = () => {
               </h2>
               <div className="w-20 h-1.5 bg-tiger mb-8"></div>
               <p className="text-xl md:text-2xl text-white/40 leading-tight max-w-md font-medium tracking-tight">
-                Meine Prinzipien für Ergebnisse, die bleiben. Ein Manifest für echte Arbeit.
+                Kein Framework-Bullshit. Vier Dinge, an die ich glaube – und nach denen ich arbeite.
               </p>
             </MotionDiv>
           </div>
@@ -103,12 +103,12 @@ const Methodology: React.FC = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-white/10 to-transparent"></div>
           
           <blockquote className="text-[9vw] md:text-[6.5rem] font-black text-white italic tracking-tighter leading-[0.8] max-w-6xl mx-auto relative inline-block">
-            „KI ist nur dann wertvoll, <br />
-            wenn sie Arbeit wirklich <br />
+            „Lieber einmal den Nagel <br />
+            auf den Kopf treffen, <br />
             <span className="relative inline-block">
-              <span className="relative z-10 text-tiger">reduziert.</span>
+              <span className="relative z-10 text-tiger">als hundertmal daneben.</span>
               <span className="absolute -inset-4 bg-tiger/20 blur-3xl rounded-full -z-10 animate-pulse-slow"></span>
-            </span>“
+            </span>"
           </blockquote>
         </MotionDiv>
       </div>

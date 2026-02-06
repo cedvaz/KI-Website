@@ -26,8 +26,8 @@ const Testimonials: React.FC = () => {
             <span className="text-tiger lowercase tracking-tight font-bold inline-block max-w-full break-all md:break-normal">zusammenarbeit</span> bleibt
           </h2>
           <p className="text-lg md:text-2xl text-white/40 font-medium max-w-2xl mx-auto leading-relaxed px-4">
-            Klarere Abläufe. Weniger Reibung. <br className="hidden md:block" />
-            Systeme, die genutzt werden.
+            Nicht meine Worte – sondern die von Leuten, <br className="hidden md:block" />
+            die jetzt anders arbeiten.
           </p>
         </div>
 

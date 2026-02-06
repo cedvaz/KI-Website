@@ -96,7 +96,7 @@ const About: React.FC = () => {
               className="text-[12vw] md:text-[7vw]"
               allowWrap={true}
             >
-              SEIT ÜBER 10 JAHREN
+              ICH KOMME NICHT
             </ScrollTextLine>
 
             <ScrollTextLine
@@ -105,7 +105,7 @@ const About: React.FC = () => {
               className="text-[12vw] md:text-[7vw]"
               allowWrap={true}
             >
-              BEGLEITE ICH KMUS
+              AUS DER KI-WELT
             </ScrollTextLine>
 
             <ScrollTextLine
@@ -114,7 +114,7 @@ const About: React.FC = () => {
               className="text-[12vw] md:text-[7vw]"
               allowWrap={true}
             >
-              IM MARKETING & VERTRIEB
+              SONDERN AUS EURER
             </ScrollTextLine>
 
             {/* SPACER for impact */}
@@ -157,7 +157,7 @@ const About: React.FC = () => {
       {/* Skills Grid - Static Section below the scroll container */}
       <section className="bg-dark py-24 px-8 border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <h3 className="text-center text-white/30 font-black uppercase tracking-[0.5em] text-sm mb-16">Expertise & Fokus</h3>
+          <h3 className="text-center text-white/30 font-black uppercase tracking-[0.5em] text-sm mb-16">Womit ich euch konkret helfe</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {SKILLS.map((skill, idx) => (
               <div key={idx} className="group cursor-default">

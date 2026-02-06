@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="mb-8 font-black text-white/40 uppercase tracking-[0.4em] text-xs md:text-sm"
           >
-            Marketing & Vertrieb mit KI
+            Für Marketing- & Vertriebsteams, die mehr wollen als ChatGPT-Copy-Paste
           </MotionDiv>
 
           <div className="flex flex-col gap-0 mb-12">
@@ -56,9 +56,9 @@ const Hero: React.FC = () => {
             className="max-w-xl mb-12 border-l-2 border-tiger pl-6 mx-auto lg:mx-0"
           >
             <p className="text-xl md:text-2xl font-medium text-white/90 leading-tight tracking-tight">
-              Ich helfe Teams, KI so zu nutzen, <br />
-              dass sie wirklich Zeit spart – und nicht nur <br />
-              neue Arbeit erzeugt.
+              Ich helfe Marketing- und Vertriebsteams, <br />
+              mit KI Content zu produzieren, der genauso gut ist <br />
+              wie vom besten Kollegen – nur ohne die Manpower.
             </p>
           </MotionDiv>
 
@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
             <div className="absolute bottom-8 left-8 right-8">
               <div className="text-white/80 font-mono text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-maya animate-pulse"></span>
-                Available for Projects
+                10+ Jahre Marketing & Vertrieb
               </div>
             </div>
 

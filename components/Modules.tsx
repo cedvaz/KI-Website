@@ -24,8 +24,8 @@ const Modules: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h2 className="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-none">Keine Theorie-Shows.</h2>
-            <p className="text-2xl text-white/60 max-w-2xl mx-auto font-medium">Wir bauen Workflows, die am nächsten Tag funktionieren. Punkt.</p>
+            <h2 className="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-none">Ihr geht raus und könnt es.</h2>
+            <p className="text-2xl text-white/60 max-w-2xl mx-auto font-medium">Kein „probiert das mal aus". Wir bauen Workflows mit euren Daten, eurer Marke, euren Zielen – und die funktionieren ab Tag 1.</p>
           </MotionDiv>
         </div>
 

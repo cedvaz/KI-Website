@@ -12,58 +12,58 @@ export const HERO_ROLES = [
 
 export const SKILLS: SkillDetail[] = [
   {
-    title: "KI-Content on Brand",
-    description: "Bilder & Videos, die nicht nach KI aussehen"
+    title: "Content, der zur Marke passt",
+    description: "Bilder, Videos, Texte – in eurer Tonalität, nicht im KI-Einheitsbrei"
   },
   {
-    title: "Marketing-Abläufe",
-    description: "Content, Kampagnen, Lead-Logik"
+    title: "Marketing, das skaliert",
+    description: "Kampagnen-Logik, die auch ohne dein bestes Teammitglied funktioniert"
   },
   {
-    title: "Vertrieb mit KI",
-    description: "Recherche, Ansprache, Nachfassen"
+    title: "Vertrieb ohne Fleißarbeit",
+    description: "Recherche, Ansprache und Follow-ups – persönlich, aber automatisiert"
   },
   {
-    title: "Sparring für Entscheider",
-    description: "Struktur, Prioritäten, Klarheit"
+    title: "Klartext statt Berater-Slides",
+    description: "Ich sag dir, was funktioniert. Und was du bleiben lassen solltest."
   }
 ];
 
 export const SERVICES: ServiceCard[] = [
   {
     title: "Keynotes",
-    tagline: "Keynotes für Menschen, die keine Lust mehr auf KI-Hype haben.",
+    tagline: "Dein Team denkt, KI = ChatGPT. Ich zeig ihnen, was wirklich geht.",
     descriptionItems: [
-      "was KI heute realistisch kann",
-      "was Unsinn ist",
-      "und wo Unternehmen gerade Zeit & Geld burnen"
+      "Wo KI heute echten Business-Impact hat – und wo es reine Show ist",
+      "Was eure Wettbewerber gerade anders machen",
+      "Warum die meisten KI-Projekte scheitern – und wie eures nicht dazu gehört"
     ],
     footerLabel: "Ideal für",
-    footerContent: "Führungskräfte, Offsites, Kickoffs, Strategietage",
+    footerContent: "Geschäftsführung, Marketing-Leiter, Sales-Leads, Offsites",
     color: "bg-tiger"
   },
   {
     title: "Workshops",
-    tagline: "Workshops, in denen echte Workflows entstehen.",
+    tagline: "Wir bauen an einem Tag, wofür Agenturen Wochen brauchen.",
     descriptionItems: [
-      "Keine Theorie.",
-      "Kein „probiert das mal aus“.",
-      "Wir bauen live – mit euren Prozessen, euren Daten, euren Zielen."
+      "Eure echten Prozesse, eure Daten, eure Marke – nicht irgendein Demo-Case",
+      "Am Ende des Tages habt ihr Workflows, die euer Team ab morgen nutzt",
+      "Ich bleibe dran, bis es sitzt – kein 'viel Erfolg damit'"
     ],
     footerLabel: "Formate",
-    footerContent: "2h Deep-Dive · ½ Tag · 1 Tag",
+    footerContent: "2h Deep-Dive · ½ Tag · Ganzer Tag",
     color: "bg-sunflower"
   },
   {
     title: "Sparring",
-    tagline: "Sparring für Entscheider.",
+    tagline: "Du brauchst keinen Ja-Sager. Du brauchst jemanden, der mitdenkt.",
     descriptionItems: [
-      "Wenn ihr schon Tools nutzt,",
-      "aber keine saubere Struktur habt,",
-      "und jemand braucht, der mitdenkt, widerspricht und sortiert"
+      "Für Entscheider, die schon KI nutzen – aber spüren, dass die Struktur fehlt",
+      "Ich challenge eure Annahmen, sortiere Prioritäten und sag, was Quatsch ist",
+      "Ehrlich, direkt, lösungsorientiert – kein Consulting-Theater"
     ],
     footerLabel: "Zielgruppe",
-    footerContent: "Gründer, CMOs, Head of Sales",
+    footerContent: "Gründer, CMOs, Head of Sales, Marketing-Leiter",
     color: "bg-maya"
   }
 ];
@@ -72,44 +72,44 @@ export const WORKSHOP_PRODUCTS: WorkshopProduct[] = [
   {
     id: 1,
     title: "KI Content Workshop",
-    tagline: "On-Brand Bilder & Videos selbst produzieren",
-    positioning: "Wir produzieren KI-Content, der aussieht wie von einer Agentur – aber intern gebaut wird.",
+    tagline: "Content, der nach euch aussieht – nicht nach KI",
+    positioning: "Euer Marketingteam produziert Bilder, Videos und Texte, die eure Marke stärken. Intern. Ohne Agentur-Abhängigkeit.",
     focus: [
-      "Marken-Look in KI übersetzen (Farben, Bildsprache)",
-      "KI-Workflows für Social Posts, Ads & Reels",
-      "Qualitätskontrolle: Was bleibt, was fliegt?"
+      "Eure Bildsprache, Tonalität und Farbwelt in KI übersetzen",
+      "Workflows für Social Posts, Ads & Reels, die das Team sofort nutzt",
+      "Qualitätsfilter: Was geht raus, was nicht – klare Kriterien statt Bauchgefühl"
     ],
-    outcome: "Prompts, visueller Stil & Workflows, die sofort genutzt werden.",
-    idealFor: "Marketing-Teams, Agenturen, High-Visibility Brands",
+    outcome: "Euer Team produziert Content, der on-brand ist – ab morgen, ohne externe Hilfe.",
+    idealFor: "Marketing-Leiter, Brand Manager, Agenturen",
     color: "tiger",
     isSignature: true
   },
   {
     id: 2,
     title: "KI Sales Workshop",
-    tagline: "Bessere Ansprachen, weniger manuelle Arbeit",
-    positioning: "KI im Vertrieb – ohne Roboter-Sales und ohne CRM-Overkill.",
+    tagline: "Persönliche Ansprache in der Hälfte der Zeit",
+    positioning: "Euer Vertrieb klingt nicht nach Roboter – sondern nach jemandem, der sich vorbereitet hat. Nur schneller.",
     focus: [
-      "Lead-Research & individuelle Ansprache",
-      "Angebots-Vorbereitung & Follow-ups",
-      "Wo KI im Vertrieb NICHT eingesetzt werden sollte"
+      "Lead-Research automatisieren, ohne den persönlichen Touch zu verlieren",
+      "Angebote und Follow-ups, die sich anfühlen wie handgemacht",
+      "Klare Grenzen: Wo KI im Vertrieb schadet statt hilft"
     ],
-    outcome: "Ein Setup, das Zeit spart, Qualität erhöht und akzeptiert wird.",
-    idealFor: "Vertriebsteams, Gründer, Head of Sales",
+    outcome: "Euer Sales-Team macht mehr Abschlüsse mit weniger Fleißarbeit.",
+    idealFor: "Head of Sales, Vertriebsleiter, Gründer mit Sales-Verantwortung",
     color: "sunflower"
   },
   {
     id: 3,
     title: "KI Marketing Workshop",
-    tagline: "Struktur, Klarheit und skalierbare Kampagnen",
-    positioning: "Marketing mit KI – aber mit Plan statt Tool-Chaos.",
+    tagline: "Vom Tool-Chaos zur Marketing-Maschine",
+    positioning: "Euer Marketing läuft nicht mehr über die eine Person, die alles kann – sondern über ein System, das alle können.",
     focus: [
-      "KI-gestützte Themen- & Content-Planung",
-      "Kampagnen-Ideen, Messaging & Hooks",
-      "Verbindung von Content → Lead → Sales"
+      "Content-Planung, die nicht vom Kalender, sondern von Zielen getrieben wird",
+      "Kampagnen-Logik: Von der Idee über den Hook bis zum Lead",
+      "Setup bauen, das auch funktioniert, wenn der beste Kopf im Urlaub ist"
     ],
-    outcome: "Ein skalierbares Setup, das nicht von Einzelpersonen abhängt.",
-    idealFor: "Marketing-Teams, Geschäftsführer, KMUs",
+    outcome: "Ein Marketing-System, das skaliert – unabhängig von einzelnen Personen.",
+    idealFor: "Marketing-Leiter, CMOs, Geschäftsführer von KMUs",
     color: "maya"
   }
 ];
@@ -146,18 +146,18 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const PROCESS: ProcessStep[] = [
   {
-    title: "Kurzcall",
-    description: "Wir klären in 15 Minuten euer Ziel, den aktuellen Stand und den Kontext – damit ich genau verstehe, was ihr braucht.",
+    title: "15 Min Call",
+    description: "Du erzählst, wo ihr steht. Ich sage dir ehrlich, ob ich der Richtige bin – und wenn ja, wie wir starten.",
     icon: "📞"
   },
   {
-    title: "Umsetzung",
-    description: "Keynote für den Überblick oder Deep-Dive Workshop, wo wir live eure Workflows bauen und direkt umsetzen.",
+    title: "Workshop oder Keynote",
+    description: "Je nachdem was passt: Entweder Überblick fürs ganze Team oder Deep-Dive, bei dem wir live eure Workflows bauen.",
     icon: "🛠️"
   },
   {
-    title: "Package",
-    description: "Templates, Prompts, Recap-Dokumentation und konkrete Next Steps – alles, was ihr braucht, um direkt weiterzumachen.",
+    title: "Ihr macht weiter",
+    description: "Ihr bekommt alles, was ihr braucht: Prompts, Templates, Dokumentation. Kein Abo, keine Abhängigkeit.",
     icon: "📦"
   }
 ];

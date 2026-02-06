@@ -11,12 +11,13 @@ const Footer: React.FC = () => {
 
             <div className="space-y-6 mb-12">
               <p className="text-2xl md:text-3xl font-bold text-white leading-tight">
-                KI ist kein Tool Thema.<br />
-                Es ist ein Struktur Thema.
+                Kein Pitch. Kein Verkaufsgespräch.<br />
+                Einfach 15 Minuten reden.
               </p>
               <p className="text-xl text-white/50 leading-relaxed max-w-xl">
-                Ich unterstütze Unternehmen dabei, Marketing und Vertrieb so zu bauen,
-                dass KI Arbeit abnimmt – statt neue zu erzeugen.
+                Erzähl mir, wo ihr steht und was euch nervt.
+                Ich sag dir ehrlich, ob und wie ich helfen kann.
+                Wenn nicht – kein Problem, kein Follow-up-Spam.
               </p>
             </div>
 

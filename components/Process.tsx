@@ -29,7 +29,7 @@ const Process: React.FC = () => {
           className="text-center mb-20 md:mb-32"
         >
           <h2 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter text-white">
-            So legen wir los
+            Unkompliziert. Direkt. Fertig.
           </h2>
           <div className="w-24 h-1 bg-tiger mx-auto"></div>
         </MotionDiv>
