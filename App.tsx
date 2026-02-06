@@ -11,6 +11,8 @@ import About from './components/About';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import ScrollWord from './components/ScrollWord';
+import PersonalBreak from './components/PersonalBreak';
+import PersonalCloser from './components/PersonalCloser';
 import Datenschutz from './components/Datenschutz';
 import Impressum from './components/Impressum';
 import MediaPage from './components/MediaPage';
@@ -35,14 +37,23 @@ const HomePage: React.FC = () => {
       <main>
         <Hero />
 
-        {/* Subtle Wave Divider */}
-        <div className="w-full overflow-hidden leading-[0]">
+        {/* Wave Divider: Dark → Cream */}
+        <div className="w-full overflow-hidden leading-[0] bg-dark">
           <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-24 w-full">
-            <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" fill="#ffffff" fillOpacity="0.03"></path>
+            <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" fill="#FAF7F2"></path>
           </svg>
         </div>
 
         <Services />
+
+        <PersonalBreak />
+
+        {/* Wave Divider: Cream → Dark */}
+        <div className="w-full overflow-hidden leading-[0] bg-cream">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-24 w-full">
+            <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" fill="#0A0A0A"></path>
+          </svg>
+        </div>
 
         <About />
 
@@ -50,9 +61,32 @@ const HomePage: React.FC = () => {
 
         <Methodology />
 
+        {/* Wave Divider: Dark → Cream */}
+        <div className="w-full overflow-hidden leading-[0] bg-dark">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-24 w-full">
+            <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" fill="#FAF7F2"></path>
+          </svg>
+        </div>
+
         <Modules />
 
+        {/* Wave Divider: Cream → Dark */}
+        <div className="w-full overflow-hidden leading-[0] bg-cream">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-24 w-full">
+            <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" fill="#0A0A0A"></path>
+          </svg>
+        </div>
+
         <Testimonials />
+
+        <PersonalCloser />
+
+        {/* Wave Divider: Cream → Dark */}
+        <div className="w-full overflow-hidden leading-[0] bg-cream">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-24 w-full">
+            <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" fill="#0A0A0A"></path>
+          </svg>
+        </div>
 
         <ScrollWord />
       </main>
