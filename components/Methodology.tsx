@@ -102,7 +102,7 @@ const Methodology: React.FC = () => {
         >
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-white/10 to-transparent"></div>
           
-          <blockquote className="text-[9vw] md:text-[6.5rem] font-black text-white italic tracking-tighter leading-[0.8] max-w-6xl mx-auto relative inline-block">
+          <blockquote className="font-pixel text-[9vw] md:text-[6.5rem] font-black text-white tracking-tighter leading-[0.8] max-w-6xl mx-auto relative inline-block">
             „Lieber einmal den Nagel <br />
             auf den Kopf treffen, <br />
             <span className="relative inline-block">

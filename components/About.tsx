@@ -133,7 +133,7 @@ const About: React.FC = () => {
             <ScrollTextLine
               progress={scrollYProgress}
               range={[0.6, 0.75]}
-              className="text-[16vw] md:text-[16vw] leading-[0.7] mix-blend-difference z-30"
+              className="text-[16vw] md:text-[16vw] leading-[0.7]"
             >
               SCHLAGEN
             </ScrollTextLine>

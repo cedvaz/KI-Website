@@ -28,7 +28,7 @@ const Process: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20 md:mb-32"
         >
-          <h2 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter text-white">
+          <h2 className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter text-white">
             Unkompliziert. Direkt. Fertig.
           </h2>
           <div className="w-24 h-1 bg-tiger mx-auto"></div>
