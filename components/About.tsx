@@ -88,7 +88,7 @@ const About: React.FC = () => {
       <section ref={containerRef} id="about" className="relative h-[400vh] bg-dark">
         <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-start overflow-hidden px-4 pt-[25vh] pb-[5vh] md:justify-center md:py-32">
 
-          <div className="relative z-10 flex flex-col items-center font-black italic tracking-tighter leading-[0.8] cursor-default text-center w-full max-w-[100vw] gap-[2vh] md:gap-0">
+          <div className="relative z-10 flex flex-col items-center font-pixel font-black tracking-tighter leading-[0.8] cursor-default text-center w-full max-w-[100vw] gap-[2vh] md:gap-0">
 
             <ScrollTextLine
               progress={scrollYProgress}

@@ -37,7 +37,7 @@ const ScrollWord: React.FC = () => {
                         y: layer1Y,
                         scale
                     } as any}
-                    className="absolute inset-0 flex items-center justify-center text-[20vw] md:text-[25vw] font-black text-tiger select-none pointer-events-none uppercase tracking-tighter italic"
+                    className="absolute inset-0 flex items-center justify-center font-pixel text-[20vw] md:text-[25vw] font-black text-tiger select-none pointer-events-none uppercase tracking-tighter"
                 >
                     UNFUCK
                 </motion.div>
@@ -49,14 +49,14 @@ const ScrollWord: React.FC = () => {
                         y: layer2Y,
                         scale
                     } as any}
-                    className="absolute inset-0 flex items-center justify-center text-[20vw] md:text-[25vw] font-black text-maya select-none pointer-events-none uppercase tracking-tighter italic"
+                    className="absolute inset-0 flex items-center justify-center font-pixel text-[20vw] md:text-[25vw] font-black text-maya select-none pointer-events-none uppercase tracking-tighter"
                 >
                     UNFUCK
                 </motion.div>
 
                 {/* Main Outline Text */}
                 <motion.div
-                    className="relative z-10 text-[20vw] md:text-[25vw] font-black text-transparent select-none pointer-events-none uppercase tracking-tighter italic"
+                    className="relative z-10 font-pixel text-[20vw] md:text-[25vw] font-black text-transparent select-none pointer-events-none uppercase tracking-tighter"
                     style={{
                         WebkitTextStroke: '2px white',
                         letterSpacing: letterSpacing as any,
@@ -73,7 +73,7 @@ const ScrollWord: React.FC = () => {
                         opacity: hypeOpacity as any,
                         scale: hypeScale as any
                     } as any}
-                    className="absolute z-20 bg-white text-dark px-8 py-4 rounded-full font-black text-4xl md:text-6xl uppercase tracking-tighter"
+                    className="absolute z-20 bg-white text-dark px-8 py-4 rounded-full font-pixel font-black text-4xl md:text-6xl uppercase tracking-tighter"
                 >
                     the hype
                 </motion.div>
