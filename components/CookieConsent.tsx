@@ -4,22 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const MotionDiv = motion.div as any;
 
-interface CookieSettings {
-  necessary: boolean;
-  performance: boolean;
-  functional: boolean;
-  marketing: boolean;
-}
-
 const CookieConsent: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
-  const [settings, setSettings] = useState<CookieSettings>({
-    necessary: true,
-    performance: false,
-    functional: false,
-    marketing: false,
-  });
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent-v2');
@@ -29,32 +15,9 @@ const CookieConsent: React.FC = () => {
     }
   }, []);
 
-  const saveConsent = (finalSettings: CookieSettings) => {
-    localStorage.setItem('cookie-consent-v2', JSON.stringify(finalSettings));
+  const saveConsent = () => {
+    localStorage.setItem('cookie-consent-v2', JSON.stringify({ necessary: true }));
     setIsVisible(false);
-  };
-
-  const handleAcceptAll = () => {
-    saveConsent({
-      necessary: true,
-      performance: true,
-      functional: true,
-      marketing: true,
-    });
-  };
-
-  const handleAcceptNecessary = () => {
-    saveConsent({
-      necessary: true,
-      performance: false,
-      functional: false,
-      marketing: false,
-    });
-  };
-
-  const toggleSetting = (key: keyof CookieSettings) => {
-    if (key === 'necessary') return; // Cannot toggle necessary
-    setSettings(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
@@ -74,8 +37,7 @@ const CookieConsent: React.FC = () => {
                 Deine Privatsphäre ist uns wichtig
               </h3>
               <p className="text-white/50 text-sm md:text-base leading-relaxed max-w-5xl">
-                Unsere Website verwendet Cookies und ähnliche Technologien, um die Grundfunktionen zu gewährleisten und dein Nutzererlebnis zu verbessern. 
-                Du kannst wählen, welche Kategorien du zulassen möchtest. Weitere Details findest du in unserer{' '}
+                Diese Website verwendet derzeit keine Analyse-, Werbe- oder Marketing-Cookies. Wir speichern lediglich deine Auswahl zu diesem Hinweis lokal in deinem Browser, damit er nicht bei jedem Besuch erneut erscheint. Weitere Details findest du in unserer{' '}
                 <a 
                   href="#datenschutz" 
                   onClick={(e) => {
@@ -89,69 +51,16 @@ const CookieConsent: React.FC = () => {
               </p>
             </div>
 
-            {/* Settings View (Accordion style) */}
-            <AnimatePresence>
-              {showSettings && (
-                <MotionDiv
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="overflow-hidden bg-white/[0.02]"
-                >
-                  <div className="p-8 md:p-10 space-y-4">
-                    <div className="flex flex-col gap-2">
-                       <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-2">Einwilligungspräferenzen verwalten</h4>
-                       
-                       {[
-                         { id: 'necessary', label: 'Unbedingt erforderliche Cookies', desc: 'Diese Cookies sind für das Funktionieren der Website notwendig und können nicht deaktiviert werden.', mandatory: true },
-                         { id: 'performance', label: 'Leistungs-Cookies', desc: 'Ermöglichen es uns, Besuche und Verkehrsquellen zu zählen, um die Leistung unserer Website zu messen.' },
-                         { id: 'functional', label: 'Funktionelle Cookies', desc: 'Ermöglichen verbesserte Funktionalität und Personalisierung (z. B. Videos).' },
-                         { id: 'marketing', label: 'Marketing-Cookies', desc: 'Werden verwendet, um Besuchern auf Websites relevante Anzeigen zu zeigen.' },
-                       ].map((item) => (
-                         <div key={item.id} className="flex items-center justify-between p-4 rounded-xl border border-white/5 hover:bg-white/[0.02] transition-colors">
-                           <div className="flex-1 pr-8">
-                             <p className="text-white font-bold text-sm">{item.label}</p>
-                             <p className="text-white/40 text-xs mt-1">{item.desc}</p>
-                           </div>
-                           {item.mandatory ? (
-                             <span className="text-[10px] font-black text-tiger uppercase tracking-widest">Immer Aktiv</span>
-                           ) : (
-                             <button 
-                               onClick={() => toggleSetting(item.id as keyof CookieSettings)}
-                               className={`w-12 h-6 rounded-full relative transition-colors ${settings[item.id as keyof CookieSettings] ? 'bg-tiger' : 'bg-white/10'}`}
-                             >
-                               <div className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-all ${settings[item.id as keyof CookieSettings] ? 'left-7' : 'left-1'}`} />
-                             </button>
-                           )}
-                         </div>
-                       ))}
-                    </div>
-                  </div>
-                </MotionDiv>
-              )}
-            </AnimatePresence>
-
             {/* Footer Actions */}
             <div className="p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-              <button 
-                onClick={handleAcceptNecessary}
-                className="text-white/40 hover:text-white text-xs font-black uppercase tracking-widest transition-colors"
-              >
-                Nur notwendige Cookies
-              </button>
+              <span className="text-white/30 text-xs font-black uppercase tracking-widest">Keine optionalen Cookies aktiv</span>
 
               <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
                 <button
-                  onClick={showSettings ? () => saveConsent(settings) : () => setShowSettings(true)}
+                  onClick={saveConsent}
                   className="px-8 py-3 rounded-xl border border-white/20 text-white font-black uppercase text-xs tracking-widest hover:bg-white/5 transition-all"
                 >
-                  {showSettings ? 'Auswahl bestätigen' : 'Cookie-Einstellungen'}
-                </button>
-                <button
-                  onClick={handleAcceptAll}
-                  className="px-8 py-3 rounded-xl bg-white text-black font-black uppercase text-xs tracking-widest hover:bg-tiger hover:text-white transition-all shadow-xl"
-                >
-                  Alle Cookies zulassen
+                  Verstanden
                 </button>
               </div>
             </div>

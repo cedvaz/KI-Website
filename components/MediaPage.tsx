@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { MEDIA_METRICS, MEDIA_PROCESS, MEDIA_TESTIMONIALS, MEDIA_EXAMPLES } from '../constants';
+import { navigateWithoutReload } from '../lib/navigation';
+import { MediaExample } from '../types';
 
 const MotionDiv = motion.div as any;
 const MotionH1 = motion.h1 as any;
@@ -582,8 +584,8 @@ const MediaFooter: React.FC = () => {
         </a>
 
         <div className="flex items-center gap-6 text-white/30 text-sm">
-          <a href="#datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
-          <a href="#impressum" className="hover:text-white transition-colors">Impressum</a>
+          <a href="/datenschutz" onClick={(event) => { event.preventDefault(); navigateWithoutReload('/datenschutz'); }} className="hover:text-white transition-colors">Datenschutz</a>
+          <a href="/impressum" onClick={(event) => { event.preventDefault(); navigateWithoutReload('/impressum'); }} className="hover:text-white transition-colors">Impressum</a>
         </div>
 
         <div className="text-white/30 text-sm">
