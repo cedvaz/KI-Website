@@ -1,9 +1,11 @@
 {
+  "redirects": [
+    { "source": "/impressum.html", "destination": "/impressum", "permanent": true },
+    { "source": "/datenschutz.html", "destination": "/datenschutz", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/impressum.html", "destination": "/impressum.html" },
-    { "source": "/datenschutz.html", "destination": "/datenschutz.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

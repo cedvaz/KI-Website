@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { navigateWithoutReload } from '../lib/navigation';
 
 const MotionDiv = motion.div as any;
 
@@ -39,10 +40,10 @@ const CookieConsent: React.FC = () => {
               <p className="text-white/50 text-sm md:text-base leading-relaxed max-w-5xl">
                 Diese Website verwendet derzeit keine Analyse-, Werbe- oder Marketing-Cookies. Wir speichern lediglich deine Auswahl zu diesem Hinweis lokal in deinem Browser, damit er nicht bei jedem Besuch erneut erscheint. Weitere Details findest du in unserer{' '}
                 <a 
-                  href="#datenschutz" 
+                  href="/datenschutz"
                   onClick={(e) => {
                     e.preventDefault();
-                    window.location.hash = 'datenschutz';
+                    navigateWithoutReload('/datenschutz');
                   }}
                   className="text-white underline hover:text-tiger transition-colors"
                 >
