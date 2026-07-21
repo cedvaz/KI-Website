@@ -49,7 +49,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .wordmark { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: -.05em; line-height: .9; text-transform: uppercase; }
 .wordmark span { color: var(--accent); }
 .header-nav { display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; }
-.header-nav.mono-label { font-size: 1.5rem; letter-spacing: .04em; }
+.header-nav.mono-label { font-size: 3rem; letter-spacing: .02em; }
 .header-nav a { border-bottom: 1px solid transparent; transition: border-color .2s ease; }
 .header-nav a:hover, .header-nav a:focus-visible { border-color: var(--accent); }
 .services-menu { position: relative; }
