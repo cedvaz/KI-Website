@@ -1,0 +1,14 @@
+---
+interface Item { number: string; title: string; value: string; detail: string; href?: string; }
+const { items } = Astro.props as { items: Item[] };
+---
+<div class="dot-list">
+  {items.map((item) => (
+    <a class="dot-row" href={item.href ?? '#'}>
+      <span class="mono-label accent">{item.number}</span>
+      <span class="dot-name">{item.title}</span>
+      <span class="dot-value">{item.value}</span>
+      <span class="dot-detail">{item.detail}</span>
+    </a>
+  ))}
+</div>

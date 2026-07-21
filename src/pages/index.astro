@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets';
+import profile from '../assets/cedric-profile.png';
+import Layout from '../layouts/Layout.astro';
+import PosterBreak from '../components/PosterBreak.astro';
+import DotLeaders from '../components/DotLeaders.astro';
+import { services, workshops } from '../data/site';
+
+const serviceItems = services.map((service) => ({ number: service.number, title: service.title, value: service.value, detail: service.detail, href: service.slug }));
+const breadcrumbs = [{ name: 'Startseite', item: 'https://www.cedric-ki.de/' }];
+---
+<Layout
+  title="KI-Experte im Allgäu für Marketing & Vertrieb | Cedric KI"
+  description="Cedric Vazquez Boo baut mit Marketing- und Vertriebsteams im Allgäu KI-Workflows, die ab morgen funktionieren: Workshops, Keynotes, Sparring und Content."
+  pathname="/"
+  breadcrumbs={breadcrumbs}
+>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="mono-label">01 · Cedric KI · Kempten · Allgäu</span>
+          <h1 class="display display-hero">KI für Marketing und Vertrieb – aus <em>Kempten,</em> fürs Allgäu</h1>
+          <div class="hero-meta">
+            <p>Ich helfe Teams, mit KI Content zu produzieren, Vertrieb vorzubereiten und Workflows zu bauen, die <strong>ab morgen liefern</strong> – nicht ab Q3.</p>
+            <p class="accent-text mono-label">Ohne Berater-Theater.</p>
+          </div>
+          <a class="hero-cta" href="#contact">Kurz klären, ob es Sinn macht <span>→</span></a>
+        </div>
+        <figure class="hero-photo">
+          <Image src={profile} alt="Cedric Vazquez Boo bei der Arbeit mit KI-Teams" width={682} height={1024} loading="eager" />
+          <figcaption class="hero-photo-label mono-label">Marketing · Vertrieb · 10+ Jahre</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <PosterBreak label="Klartext / 01">KI ist kein Tool-Thema. Es ist die Frage, welche Arbeit morgen noch manuell sein muss.</PosterBreak>
+
+  <section class="section" id="leistungen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono-label">02 · Leistungen</span>
+        <div>
+          <h2 class="display display-section">Was wir bauen</h2>
+          <p class="section-intro">Eure echten Prozesse, eure Daten, eure Marke. Kein Demo-Case. Kein „viel Erfolg damit“.</p>
+        </div>
+      </div>
+      <DotLeaders items={serviceItems} />
+    </div>
+  </section>
+
+  <section class="section" id="workshops" style="background: var(--surface-1);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono-label">03 · Workshop-Formate</span>
+        <div>
+          <h2 class="display display-section">Drei Einstiege</h2>
+          <p class="section-intro">Erst schafft das Management Klarheit. Dann bauen Marketing und Vertrieb an echten Aufgaben weiter.</p>
+        </div>
+      </div>
+      <div class="workshop-grid">
+        {workshops.map((workshop) => (
+          <article class="workshop">
+            <span class="workshop-number">{workshop.number}</span>
+            <h3>{workshop.title}</h3>
+            <p>{workshop.intro}</p>
+            <ul>
+              {workshop.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+            <a class="mono-label accent-text" href={workshop.slug}>Format ansehen →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="mono-label">04 · So starten wir · Kempten</span>
+        <h2 class="display">15 Minuten. Dann wissen wir mehr.</h2>
+        <p>Erzähl mir, wo ihr steht und was euch nervt. Ich sag dir ehrlich, ob und wie ich helfen kann.</p>
+        <p>Workshop, Keynote oder Sparring. Ihr bekommt, was ihr braucht: Prompts, Templates und Dokumentation. Kein Abo. Keine Abhängigkeit.</p>
+        <a class="hero-cta" href="mailto:hi@cedric-ki.de">Gespräch anfragen <span>→</span></a>
+      </div>
+      <div>
+        <span class="mono-label quiet-light">Kontakt aufnehmen</span>
+        <p class="quiet-light">Cedric KI<br />Marketing · Vertrieb · Content<br />Am Frickenland 4<br />87437 Kempten</p>
+        <a class="contact-link" href="mailto:hi@cedric-ki.de">hi@cedric-ki.de →</a>
+      </div>
+    </div>
+  </section>
+</Layout>

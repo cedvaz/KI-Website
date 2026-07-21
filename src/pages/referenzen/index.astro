@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import DotLeaders from '../../components/DotLeaders.astro';
+import { testimonials } from '../../data/site';
+
+const items = [
+  { number: '01', title: 'Schorer + Wolf', value: '−60 %', detail: 'Unternehmensgeschichte mit KI-gestützter Bild- und Videoproduktion.', href: '/referenzen/schorer-wolf' },
+  { number: '02', title: 'cvift', value: '+35 %', detail: 'Sales-Workflow mit Recherche-Automatisierung und Gesprächsvorbereitung.', href: '#contact' },
+  { number: '03', title: 'digital new x', value: '+400 %', detail: 'Marketing-Pipeline für schnellere Content-Produktion ohne Qualitätsverlust.', href: '#contact' },
+];
+---
+<Layout title="KI-Referenzen aus dem Allgäu | Cedric KI" description="Echte Projekte, Workflows und Ergebnisse aus Marketing, Vertrieb und Content." pathname="/referenzen" image="/cedric-personal-1.avif" breadcrumbs={[{ name: 'Startseite', item: 'https://www.cedric-ki.de/' }, { name: 'Referenzen', item: 'https://www.cedric-ki.de/referenzen' }]}>
+  <PageHero label="Beweise · Referenzen" title="Was sich nach der Zusammenarbeit ändert" description="Echte Projekte. Echte Teams. Ergebnisse, die sich nicht in einer PowerPoint verstecken müssen." kicker="Nicht meine Worte – die von Kunden." />
+  <section class="page-content"><div class="wrap"><DotLeaders items={items} /></div></section>
+  <section class="section" style="background: var(--surface-1);"><div class="wrap"><span class="mono-label">Kundenstimmen</span><h2 class="display display-section">Kurz gesagt</h2><div style="margin-top: 3rem;"><div class="quote-grid">{testimonials.map((item) => <article class="quote"><span class="quote-metric">{item.metric}</span><span class="mono-label quote-label">{item.metricLabel}</span><blockquote>„{item.text}“</blockquote><cite>{item.author} · {item.role}</cite></article>)}</div></div></div></section>
+  <section class="contact" id="contact"><div class="wrap contact-grid"><div><span class="mono-label">Kontakt · Kempten</span><h2 class="display">Euer Case könnte der nächste sein.</h2><a class="contact-link" href="mailto:hi@cedric-ki.de">hi@cedric-ki.de →</a></div><p class="quiet-light">15 Minuten reichen, um zu klären, ob es Sinn macht.</p></div></section>
+</Layout>

@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import PosterBreak from '../components/PosterBreak.astro';
+import MarketingWorkshopPage from '../components/MarketingWorkshopPage.astro';
+import { pageData, type ServicePath } from '../data/site';
+
+type ServiceData = {
+  label: string;
+  title: string;
+  description: string;
+  kicker: string;
+  sections: readonly (readonly [string, string])[];
+  meta?: readonly (readonly [string, string])[];
+  audience?: readonly string[];
+  audienceTitle?: string;
+  process?: readonly (readonly [string, string])[];
+  processTitle?: string;
+  processIntro?: string;
+  outcomes?: readonly string[];
+  outcomesTitle?: string;
+  formatGuide?: readonly (readonly [string, string, string])[];
+  faqs?: readonly (readonly [string, string])[];
+  ctaTitle?: string;
+  ctaCopy?: string;
+  ctaLabel?: string;
+};
+
+export function getStaticPaths() {
+  return Object.entries(pageData).map(([slug, data]) => ({ params: { slug: slug.slice(1) }, props: { slug, data } }));
+}
+
+const { slug, data } = Astro.props as { slug: ServicePath; data: ServiceData };
+const title = `${data.title} | Cedric KI`;
+const breadcrumbs = [{ name: 'Startseite', item: 'https://www.cedric-ki.de/' }, { name: data.title, item: `https://www.cedric-ki.de${slug}` }];
+const ogImage = slug.includes('content') || slug.includes('marketing') ? '/cedric-personal-1.avif' : slug.includes('vertrieb') || slug.includes('beratung') ? '/cedric-personal-2.avif' : '/cedric-profile.png';
+---
+<Layout title={title} description={data.description} pathname={slug} image={ogImage} breadcrumbs={breadcrumbs} service={{ name: data.title, description: data.description }}>
+  <PageHero label={data.label} title={data.title} description={data.description} kicker={data.kicker} />
+  {data.meta && <section class="service-meta"><div class="wrap service-meta-grid">{data.meta.map(([label, value]) => <div class="service-meta-item"><span class="mono-label quiet">{label}</span><strong>{value}</strong></div>)}</div></section>}
+  {data.audience && <section class="section service-section"><div class="wrap service-two-col"><span class="mono-label accent">Für wen</span><div><h2 class="display display-section">{data.audienceTitle ?? 'Der richtige Raum für klare Entscheidungen'}</h2><ul class="service-list">{data.audience.map((item) => <li>{item}</li>)}</ul></div></div></section>}
+  {slug === '/ki-marketing-workshop' ? <MarketingWorkshopPage /> : <section class="page-content">
+    <div class="wrap content-grid">
+      {data.sections.map(([heading, copy], index) => (
+        <article class="content-block">
+          <span class="mono-label accent">0{index + 1}</span>
+          <h2>{heading}</h2>
+          <p>{copy}</p>
+        </article>
+      ))}
+    </div>
+  </section>}
+  {data.formatGuide && <section class="section service-section format-guide-section"><div class="wrap"><div class="section-head"><span class="mono-label accent">Die Formate</span><div><h2 class="display display-section">Workshop, Beratung oder Keynote?</h2><p class="section-intro">Nicht jede KI-Frage braucht denselben Rahmen. Entscheidend ist, ob ihr bauen, sortieren oder ein gemeinsames Bild schaffen wollt.</p></div></div><div class="format-guide-grid">{data.formatGuide.map(([label, title, copy]) => <article class="format-guide-item"><span class="mono-label accent">{label}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>}
+  {data.process && <section class="section service-section" style="background: var(--surface-1);"><div class="wrap"><div class="section-head"><span class="mono-label accent">Ablauf</span><div><h2 class="display display-section">{data.processTitle ?? 'Ein Tag mit Richtung'}</h2><p class="section-intro">{data.processIntro ?? 'Vom gemeinsamen Verständnis zu einer Entscheidung, mit der euer Team weiterarbeiten kann.'}</p></div></div><div class="process-grid">{data.process.map(([heading, copy]) => <article class="process-step"><span class="mono-label accent">{heading.split(' · ')[0]}</span><h3>{heading.split(' · ')[1] ?? heading}</h3><p>{copy}</p></article>)}</div></div></section>}
+  {data.outcomes && <section class="section service-section"><div class="wrap service-two-col"><span class="mono-label accent">Am Ende des Tages</span><div><h2 class="display display-section">{data.outcomesTitle ?? 'Das nehmt ihr mit'}</h2><ul class="outcome-list">{data.outcomes.map((item) => <li>{item}</li>)}</ul></div></div></section>}
+  {data.faqs && <section class="section service-section" style="background: var(--surface-2);"><div class="wrap service-two-col"><span class="mono-label">FAQ</span><div class="faq-list">{data.faqs.map(([question, answer]) => <details class="faq-item"><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></section>}
+  <PosterBreak tone={slug === '/ki-content-produktion' ? 'blue' : 'red'} label="Nächster Schritt">Kurz klären, ob es Sinn macht. 15 Minuten reichen.</PosterBreak>
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div><span class="mono-label">Kontakt · Kempten</span><h2 class="display">{data.ctaTitle ?? 'Was soll bei euch ab morgen anders laufen?'}</h2><p>{data.ctaCopy ?? '15 Minuten reichen, um zu klären, ob das Format passt.'}</p><a class="contact-link" href="mailto:hi@cedric-ki.de">{data.ctaLabel ?? 'Gespräch anfragen'} →</a></div>
+      <p class="quiet-light">Vor Ort im Allgäu oder remote. Direkt mit Cedric, ohne Übergabe an ein großes Team.</p>
+    </div>
+  </section>
+</Layout>

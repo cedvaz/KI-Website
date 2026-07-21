@@ -1,0 +1,12 @@
+---
+interface Props { label: string; title: string; description: string; kicker?: string; }
+const { label, title, description, kicker } = Astro.props;
+---
+<header class="page-hero">
+  <div class="wrap">
+    <span class="mono-label accent">{label}</span>
+    <h1 class="display">{title}</h1>
+    {kicker && <p class="accent-text mono-label" style="margin-bottom: 1rem;">{kicker}</p>}
+    <p>{description}</p>
+  </div>
+</header>
