@@ -37,6 +37,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .display { font-family: var(--font-display); text-transform: uppercase; letter-spacing: -.055em; line-height: .9; }
 .display-light { font-family: var(--font-body); font-weight: 300; text-transform: uppercase; letter-spacing: -.055em; line-height: .94; }
+.display, .page-hero h1, .contact h2, .poster h2 { overflow-wrap: anywhere; }
 .display-hero { font-size: clamp(2.9rem, 8.2vw, 8.6rem); overflow-wrap: anywhere; }
 .display-section { font-size: clamp(3rem, 8vw, 8rem); }
 .accent-text { color: var(--accent-text); }
@@ -49,7 +50,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .wordmark { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: -.05em; line-height: .9; text-transform: uppercase; }
 .wordmark span { color: var(--accent); }
 .header-nav { display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; }
-.header-nav.mono-label { font-size: 3rem; letter-spacing: .02em; }
+.header-nav.mono-label, .micro-grid > .header-nav.mono-label { font-size: 3rem; letter-spacing: .02em; }
 .header-nav a { border-bottom: 1px solid transparent; transition: border-color .2s ease; }
 .header-nav a:hover, .header-nav a:focus-visible { border-color: var(--accent); }
 .services-menu { position: relative; }
@@ -164,6 +165,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .faq-list { border-top: 1px solid var(--ink); }
 .faq-item { border-bottom: 1px solid color-mix(in srgb, var(--ink) 38%, transparent); }
 .faq-item summary { display: flex; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; cursor: pointer; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 700; }
+.faq-item summary { text-align: left; }
 .faq-item summary span { color: var(--accent); font-family: var(--font-mono); font-weight: 400; }
 .faq-item p { max-width: 42rem; margin: 0 0 1.2rem; color: color-mix(in srgb, var(--ink) 72%, transparent); }
 .page-content { padding: 4rem 0 7rem; }
@@ -247,12 +249,29 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .legal-body ul { padding-left: 1.3rem; }
 
 @media (max-width: 800px) {
+  html, body { overflow-x: clip; }
   .wrap { width: min(100% - 1.5rem, 92rem); }
   .micro-grid { grid-template-columns: 1fr 1fr; }
   .header-nav { grid-column: 1 / -1; order: 3; }
+  .header-nav.mono-label, .micro-grid > .header-nav.mono-label { font-size: .92rem; letter-spacing: .08em; gap: .75rem 1rem; }
   .services-subnav { position: static; min-width: 0; margin-top: .8rem; }
+  .micro-grid > .mono-label { font-size: .66rem; letter-spacing: .1em; }
   .header-contact { text-align: right; }
   .hero-grid, .contact-grid, .case-layout { grid-template-columns: 1fr; }
+  .display-hero { font-size: clamp(2.6rem, 13vw, 4.6rem); }
+  .display-section { font-size: clamp(2.5rem, 12vw, 4.8rem); }
+  .page-hero { padding: 4rem 0 2.5rem; }
+  .page-hero h1 { font-size: clamp(3rem, 14vw, 5.5rem); }
+  .page-hero p { font-size: clamp(1.1rem, 5.5vw, 1.5rem); }
+  .poster h2, .contact h2 { font-size: clamp(2.6rem, 12vw, 5rem); max-width: 100%; }
+  .contact p { font-size: 1.05rem; }
+  .section-intro { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+  .content-block h2 { font-size: clamp(1.7rem, 8vw, 3rem); }
+  .content-block p, .article-body { font-size: 1.05rem; }
+  .service-meta-item strong { font-size: clamp(1.5rem, 8vw, 2.2rem); }
+  .service-list li, .outcome-list li { font-size: clamp(1rem, 4.8vw, 1.3rem); }
+  .process-step h3, .format-guide-item h3 { font-size: clamp(1.6rem, 8vw, 2.8rem); }
+  .faq-item summary { align-items: flex-start; font-size: 1.05rem; line-height: 1.15; }
   .hero-photo { min-height: 20rem; }
   .hero-photo img { min-height: 20rem; }
   .section-head, .poster-inner, .service-two-col { grid-template-columns: 1fr; }

@@ -11,7 +11,7 @@ export const services = [
     number: '01',
     title: 'C-Level Workshop',
     slug: '/ki-c-level-workshop',
-    value: '1 Tag',
+    value: '2–3 Std.',
     intro: 'Management versteht, was geht – und entscheidet, was als Nächstes zählt.',
     detail: 'Für Geschäftsführungen und Führungsteams.',
   },
@@ -120,8 +120,8 @@ export const pageData = {
     description: 'Ein kompakter KI-Workshop für Geschäftsführungen und Führungsteams im Allgäu: Chancen verstehen, Risiken einordnen und die richtigen nächsten Schritte entscheiden.',
     kicker: 'Erst verstehen, was geht. Dann entscheiden, was zählt.',
     meta: [
-      ['Dauer', '1 Tag'],
-      ['Format', 'Vor Ort oder remote'],
+      ['Dauer', '2–3 Stunden'],
+      ['Format', 'Nur vor Ort'],
       ['Größe', '4–12 Personen'],
     ],
     audience: [
@@ -132,7 +132,7 @@ export const pageData = {
     process: [
       ['01 · Klarheit schaffen', 'Wir sortieren, was generative KI heute wirklich kann, wo sie Grenzen hat und welche Fragen für euer Unternehmen zählen.'],
       ['02 · Prioritäten setzen', 'Wir sammeln Use Cases aus eurem Alltag und bewerten sie nach Wirkung, Aufwand, Datenlage und Risiko.'],
-      ['03 · Nächsten Schritt entscheiden', 'Ihr geht mit einer klaren Reihenfolge und einem realistischen Startpunkt für Marketing, Vertrieb oder interne Prozesse aus dem Tag.'],
+      ['03 · Nächsten Schritt entscheiden', 'Ihr geht mit einer klaren Reihenfolge und einem realistischen Startpunkt für Marketing, Vertrieb oder interne Prozesse aus dem Workshop.'],
     ],
     outcomes: [
       'Ein gemeinsames Verständnis von KI im Führungsteam',
@@ -144,11 +144,14 @@ export const pageData = {
       ['Müssen wir schon KI-Erfahrung haben?', 'Nein. Der Workshop ist für Teams gedacht, die Orientierung brauchen oder erste Versuche sauber einordnen wollen. Technisches Vorwissen ist nicht nötig.'],
       ['Wer sollte dabei sein?', 'Am besten die Geschäftsführung oder Inhaber:innen gemeinsam mit den Verantwortlichen aus Marketing, Vertrieb und den relevanten internen Prozessen.'],
       ['Ist das ein Tool-Training?', 'Nein. Wir schauen zuerst auf eure Ziele und Abläufe. Tools kommen nur dort ins Spiel, wo sie für eine konkrete Entscheidung relevant sind.'],
-      ['Wo findet der Workshop statt?', 'Im Allgäu vor Ort, zum Beispiel in Kempten, oder remote. Der Ablauf bleibt in beiden Fällen fokussiert und praxisnah.'],
+      ['Wo findet der Workshop statt?', 'Der Workshop findet vor Ort im Allgäu statt, zum Beispiel in Kempten. So können wir direkt an euren Abläufen und Fragen arbeiten.'],
     ],
+    processTitle: '2–3 Stunden mit Richtung',
+    processIntro: 'Ein kompakter Vor-Ort-Workshop für Führungsteams, die aus vielen Möglichkeiten eine klare Entscheidung machen wollen.',
     ctaTitle: 'Klarheit für eure KI-Entscheidung',
     ctaCopy: 'Schreib mir kurz, wo ihr steht und wer beim Workshop dabei sein soll. Danach klären wir in 15 Minuten, ob das Format passt.',
     ctaLabel: 'C-Level-Workshop anfragen',
+    locationCopy: 'Vor Ort im Allgäu, direkt mit Cedric. Kein Remote-Call und keine Übergabe an ein großes Team.',
     sections: [
       ['Das gemeinsame Bild', 'Wir schaffen Klarheit darüber, was generative KI heute im Unternehmen leisten kann – und wo sie noch nicht zuverlässig genug ist.'],
       ['Die richtigen Fragen', 'Welche Aufgaben kosten Zeit? Wo liegt Wissen brach? Welche Prozesse gehören ins Marketing, in den Vertrieb oder direkt auf die Management-Agenda?'],
