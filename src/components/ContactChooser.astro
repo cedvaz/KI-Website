@@ -77,7 +77,6 @@ import '../styles/contact-chooser.css';
       const target = event.target instanceof Element ? event.target : null;
       const mailtoLink = target?.closest('a[href^="mailto:"]');
       if (mailtoLink && !chooser.contains(mailtoLink)) {
-        event.preventDefault();
         let appOpened = false;
         let fallbackTimer;
         const markAppOpened = () => {
@@ -92,14 +91,6 @@ import '../styles/contact-chooser.css';
 
         window.addEventListener('blur', markAppOpened, { once: true });
         document.addEventListener('visibilitychange', handleVisibilityChange);
-
-        try {
-          window.location.href = mailtoLink.href;
-        } catch {
-          markAppOpened();
-          showChooser(mailtoLink);
-          return;
-        }
 
         fallbackTimer = window.setTimeout(() => {
           window.removeEventListener('blur', markAppOpened);
