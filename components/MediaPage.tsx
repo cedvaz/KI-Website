@@ -543,7 +543,7 @@ const MediaContact: React.FC = () => {
           </p>
 
           <MotionA
-            href="mailto:hello@cedric-ki.de?subject=Media%20Anfrage"
+            href="mailto:hi@cedric-ki.de?subject=Media%20Anfrage"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center justify-center gap-4 px-12 py-6 bg-white text-dark rounded-2xl font-black text-xl md:text-2xl uppercase tracking-tighter hover:bg-tiger hover:text-white transition-all shadow-2xl"
