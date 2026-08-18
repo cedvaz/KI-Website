@@ -65,16 +65,47 @@ import '../styles/contact-chooser.css';
       lastTrigger = null;
     };
 
+    const showChooser = (link) => {
+      lastTrigger = link;
+      setContactLinks(link);
+      chooser.hidden = false;
+      document.body.classList.add('contact-chooser-open');
+      chooser.querySelector('[data-contact-mail]')?.focus();
+    };
+
     document.addEventListener('click', (event) => {
       const target = event.target instanceof Element ? event.target : null;
       const mailtoLink = target?.closest('a[href^="mailto:"]');
       if (mailtoLink && !chooser.contains(mailtoLink)) {
         event.preventDefault();
-        lastTrigger = mailtoLink;
-        setContactLinks(mailtoLink);
-        chooser.hidden = false;
-        document.body.classList.add('contact-chooser-open');
-        chooser.querySelector('[data-contact-mail]')?.focus();
+        let appOpened = false;
+        let fallbackTimer;
+        const markAppOpened = () => {
+          appOpened = true;
+          window.clearTimeout(fallbackTimer);
+          window.removeEventListener('blur', markAppOpened);
+          document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+        const handleVisibilityChange = () => {
+          if (document.hidden) markAppOpened();
+        };
+
+        window.addEventListener('blur', markAppOpened, { once: true });
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        try {
+          window.location.href = mailtoLink.href;
+        } catch {
+          markAppOpened();
+          showChooser(mailtoLink);
+          return;
+        }
+
+        fallbackTimer = window.setTimeout(() => {
+          window.removeEventListener('blur', markAppOpened);
+          document.removeEventListener('visibilitychange', handleVisibilityChange);
+          if (!appOpened) showChooser(mailtoLink);
+        }, 1200);
         return;
       }
 
