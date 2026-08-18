@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const title = 'Was kostet ein KI-Workshop? | Cedric KI';
+const description = 'Was ein guter KI-Workshop für Marketing und Vertrieb im Allgäu kostet, wovon der Aufwand abhängt und wie du das passende Format auswählst.';
+const breadcrumbs = [
+  { name: 'Startseite', item: 'https://www.cedric-ki.de/' },
+  { name: 'Wissen', item: 'https://www.cedric-ki.de/wissen' },
+  { name: 'Was kostet ein KI-Workshop?', item: 'https://www.cedric-ki.de/wissen/was-kostet-ein-ki-workshop' },
+];
+---
+<Layout title={title} description={description} pathname="/wissen/was-kostet-ein-ki-workshop" image="/cedric-personal-2.avif" breadcrumbs={breadcrumbs} article={{ headline: 'Was kostet ein KI-Workshop?', datePublished: '2026-07-21', dateModified: '2026-07-21' }}>
+  <PageHero label="Wissen · Workshop" title="Was kostet ein KI-Workshop?" description="Die kurze Antwort: Es kommt darauf an, was danach im Alltag besser laufen soll. Ein guter Workshop verkauft keine Prompt-Sammlung, sondern schafft Klarheit und einen nächsten Schritt." kicker="Stand: Juli 2026" />
+
+  <section class="page-content">
+    <div class="wrap article-body">
+      <div class="article-meta"><span class="mono-label accent">Praxisartikel</span><span class="mono-label quiet">Marketing · Vertrieb · Allgäu</span></div>
+      <p>Für einen KI-Workshop gibt es keinen sinnvollen Einheitspreis. Entscheidend sind Teamgröße, Ziel und die Frage, ob ihr nur Orientierung braucht oder bereits an echten Abläufen arbeiten wollt.</p>
+
+      <h2>Die drei Faktoren</h2>
+      <p>Erstens: der Kontext. Ein halber Tag für ein kleines Marketingteam ist etwas anderes als ein Workshop für mehrere Abteilungen. Zweitens: die Vorbereitung. Je konkreter die Fragen und Materialien, desto mehr Zeit fließt in die Arbeit an euren Fällen. Drittens: der Transfer. Wenn aus dem Termin ein Workflow, eine Vorlage oder eine klare interne Regel werden soll, gehört dieser Schritt in die Planung.</p>
+
+      <h2>Welches Format passt?</h2>
+      <ul>
+        <li><strong>Impuls oder Keynote:</strong> sinnvoll, wenn ein Team ein gemeinsames Bild von Möglichkeiten und Grenzen braucht.</li>
+        <li><strong>Halbtages-Workshop:</strong> gut für einen fokussierten Anwendungsfall, zum Beispiel Content-Planung oder Vertriebsrecherche.</li>
+        <li><strong>Ganztages-Workshop:</strong> richtig, wenn mehrere Rollen mitarbeiten und am Ende erste Ergebnisse stehen sollen.</li>
+        <li><strong>Sparring:</strong> passend, wenn bereits Erfahrung da ist und ein konkreter Prozess Schritt für Schritt besser werden soll.</li>
+      </ul>
+
+      <h2>Woran du einen guten Workshop erkennst</h2>
+      <p>Am Ende ist klar, wer was ausprobiert. Die Beispiele kommen aus eurem Unternehmen. Datenschutz und Freigaben werden nicht als Fußnote behandelt. Und es gibt eine kurze Liste mit nächsten Schritten, die innerhalb der nächsten zwei Wochen realistisch sind.</p>
+      <p>Für Unternehmen im Allgäu bedeutet das oft: weniger allgemeine KI-Theorie, mehr Arbeit an den Texten, Angeboten, Briefings und Routinen, die bereits auf dem Tisch liegen.</p>
+      <p><a class="contact-link" href="/#contact">Workshop für dein Team besprechen →</a></p>
+    </div>
+  </section>
+</Layout>

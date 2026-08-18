@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { MEDIA_METRICS, MEDIA_PROCESS, MEDIA_TESTIMONIALS, MEDIA_EXAMPLES } from '../constants';
+import { navigateWithoutReload } from '../lib/navigation';
+import { MediaExample } from '../types';
 
 const MotionDiv = motion.div as any;
 const MotionH1 = motion.h1 as any;
@@ -541,7 +543,7 @@ const MediaContact: React.FC = () => {
           </p>
 
           <MotionA
-            href="mailto:hello@cedric-ki.de?subject=Media%20Anfrage"
+            href="mailto:hi@cedric-ki.de?subject=Media%20Anfrage"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center justify-center gap-4 px-12 py-6 bg-white text-dark rounded-2xl font-black text-xl md:text-2xl uppercase tracking-tighter hover:bg-tiger hover:text-white transition-all shadow-2xl"
@@ -582,8 +584,8 @@ const MediaFooter: React.FC = () => {
         </a>
 
         <div className="flex items-center gap-6 text-white/30 text-sm">
-          <a href="#datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
-          <a href="#impressum" className="hover:text-white transition-colors">Impressum</a>
+          <a href="/datenschutz" onClick={(event) => { event.preventDefault(); navigateWithoutReload('/datenschutz'); }} className="hover:text-white transition-colors">Datenschutz</a>
+          <a href="/impressum" onClick={(event) => { event.preventDefault(); navigateWithoutReload('/impressum'); }} className="hover:text-white transition-colors">Impressum</a>
         </div>
 
         <div className="text-white/30 text-sm">

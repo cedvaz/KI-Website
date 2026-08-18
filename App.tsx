@@ -17,6 +17,22 @@ import Datenschutz from './components/Datenschutz';
 import Impressum from './components/Impressum';
 import MediaPage from './components/MediaPage';
 
+const getCurrentPage = () => {
+  const pathname = window.location.pathname.replace(/\/$/, '') || '/';
+  const hash = window.location.hash.slice(1);
+
+  if (pathname === '/datenschutz' || pathname === '/datenschutz.html' || hash === 'datenschutz') {
+    return 'datenschutz';
+  }
+  if (pathname === '/impressum' || pathname === '/impressum.html' || hash === 'impressum') {
+    return 'impressum';
+  }
+  if (pathname === '/media' || hash === 'media') {
+    return 'media';
+  }
+  return 'home';
+};
+
 const HomePage: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -106,49 +122,19 @@ const HomePage: React.FC = () => {
 };
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<string>('home');
+  const [currentPage, setCurrentPage] = useState<string>(getCurrentPage);
 
   useEffect(() => {
-    // Check hash on mount
-    const checkHash = () => {
-      const hash = window.location.hash.slice(1);
-      if (hash === 'datenschutz') {
-        setCurrentPage('datenschutz');
-      } else if (hash === 'impressum') {
-        setCurrentPage('impressum');
-      } else if (hash === 'media') {
-        setCurrentPage('media');
-      } else {
-        setCurrentPage('home');
-      }
-    };
+    const syncPage = () => setCurrentPage(getCurrentPage());
 
-    // Initial check
-    checkHash();
-
-    // Listen for hash changes
-    const handleHashChange = () => {
-      checkHash();
-    };
-
-    // Also check periodically to catch any missed changes
-    const interval = setInterval(() => {
-      const currentHash = window.location.hash.slice(1);
-      if ((currentHash === 'datenschutz' && currentPage !== 'datenschutz') ||
-          (currentHash === 'impressum' && currentPage !== 'impressum') ||
-          (currentHash === 'media' && currentPage !== 'media') ||
-          (currentHash === '' && currentPage !== 'home')) {
-        checkHash();
-      }
-    }, 100);
-
-    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('hashchange', syncPage);
+    window.addEventListener('popstate', syncPage);
     
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-      clearInterval(interval);
+      window.removeEventListener('hashchange', syncPage);
+      window.removeEventListener('popstate', syncPage);
     };
-  }, [currentPage]);
+  }, []);
 
   // Render based on current page
   if (currentPage === 'datenschutz') {

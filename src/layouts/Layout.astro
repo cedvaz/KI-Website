@@ -1,0 +1,110 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import ContactChooser from '../components/ContactChooser.astro';
+
+type Crumb = { name: string; item: string };
+type Props = {
+  title: string;
+  description: string;
+  pathname?: string;
+  image?: string;
+  noindex?: boolean;
+  breadcrumbs?: Crumb[];
+  service?: { name: string; description: string };
+  article?: { headline: string; datePublished: string; dateModified: string; author?: string };
+};
+
+const {
+  title,
+  description,
+  pathname = Astro.url.pathname,
+  image = '/cedric-profile.png',
+  noindex = false,
+  breadcrumbs = [],
+  service,
+  article,
+} = Astro.props;
+
+const canonical = new URL(pathname, Astro.site ?? 'https://www.cedric-ki.de').toString();
+const personId = 'https://www.cedric-ki.de/#cedric-vazquez-boo';
+const businessId = 'https://www.cedric-ki.de/#cedric-ki';
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'ProfessionalService',
+    '@id': businessId,
+    name: 'Cedric KI',
+    url: 'https://www.cedric-ki.de/',
+    image: 'https://www.cedric-ki.de/cedric-profile.png',
+    email: 'hi@cedric-ki.de',
+    description: 'Praktische KI für Marketing, Vertrieb und Content im Allgäu.',
+    address: { '@type': 'PostalAddress', streetAddress: 'Am Frickenland 4', addressLocality: 'Kempten', postalCode: '87437', addressCountry: 'DE' },
+    areaServed: [
+      { '@type': 'City', name: 'Kempten' },
+      { '@type': 'City', name: 'Memmingen' },
+      { '@type': 'City', name: 'Kaufbeuren' },
+      { '@type': 'Place', name: 'Allgäu' },
+    ],
+    sameAs: ['https://www.linkedin.com/in/cedric-vazquez-boo/', 'https://www.instagram.com/vazced/'],
+    founder: { '@id': personId },
+  },
+  {
+    '@type': 'Person',
+    '@id': personId,
+    name: 'Cedric Vazquez Boo',
+    jobTitle: 'KI-Experte für Marketing und Vertrieb',
+    url: 'https://www.cedric-ki.de/ueber-cedric-vazquez-boo',
+    worksFor: { '@id': businessId },
+    sameAs: ['https://www.linkedin.com/in/cedric-vazquez-boo/', 'https://www.instagram.com/vazced/'],
+  },
+  { '@type': 'WebSite', '@id': 'https://www.cedric-ki.de/#website', name: 'Cedric KI', url: 'https://www.cedric-ki.de/', inLanguage: 'de-DE' },
+];
+
+if (service) {
+  graph.push({
+    '@type': 'Service',
+    '@id': `${canonical}#service`,
+    name: service.name,
+    description: service.description,
+    provider: { '@id': businessId },
+    areaServed: [
+      { '@type': 'Place', name: 'Allgäu' },
+      { '@type': 'City', name: 'Kempten' },
+      { '@type': 'City', name: 'Memmingen' },
+      { '@type': 'City', name: 'Kaufbeuren' },
+    ],
+  });
+}
+if (article) {
+  graph.push({ '@type': 'Article', '@id': `${canonical}#article`, headline: article.headline, datePublished: article.datePublished, dateModified: article.dateModified, author: { '@id': personId }, publisher: { '@id': businessId }, mainEntityOfPage: canonical });
+}
+if (breadcrumbs.length) {
+  graph.push({ '@type': 'BreadcrumbList', itemListElement: breadcrumbs.map((crumb, index) => ({ '@type': 'ListItem', position: index + 1, name: crumb.name, item: crumb.item })) });
+}
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site ?? 'https://www.cedric-ki.de').toString()} />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Cedric KI" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}></script>
+  </head>
+  <body>
+    <SiteHeader />
+    <main><slot /></main>
+    <SiteFooter />
+    <ContactChooser />
+  </body>
+</html>

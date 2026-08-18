@@ -1,0 +1,10 @@
+---
+interface Props { tone?: 'red' | 'blue'; label: string; }
+const { tone = 'red', label } = Astro.props;
+---
+<section class={`poster poster-${tone}`}>
+  <div class="wrap poster-inner">
+    <span class="mono-label">{label}</span>
+    <h2 class="display-light"><slot /></h2>
+  </div>
+</section>

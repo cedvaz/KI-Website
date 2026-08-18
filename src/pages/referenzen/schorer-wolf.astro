@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import personal from '../../assets/cedric-personal-1.avif';
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import PosterBreak from '../../components/PosterBreak.astro';
+---
+<Layout title="Schorer + Wolf: KI-Case | Cedric KI" description="Wie aus historischen Bildern eine visuelle Unternehmensgeschichte für Schorer + Wolf entstand." pathname="/referenzen/schorer-wolf" image="/cedric-personal-1.avif" breadcrumbs={[{ name: 'Startseite', item: 'https://www.cedric-ki.de/' }, { name: 'Referenzen', item: 'https://www.cedric-ki.de/referenzen' }, { name: 'Schorer + Wolf', item: 'https://www.cedric-ki.de/referenzen/schorer-wolf' }]}>
+  <PageHero label="Case · Schorer + Wolf" title="90 Jahre. 12 Bilder. Eine Geschichte." description="Viele Allgäuer Unternehmen besitzen unglaubliche Geschichten. Schorer + Wolf hat sie sichtbar gemacht – mit KI, Haltung und einem klaren visuellen System." kicker="KI-Content, der nach dem Unternehmen aussieht." />
+  <section class="section"><div class="wrap case-layout"><div><span class="mono-label accent">Das Ergebnis</span><span class="quote-metric">−60 %</span><span class="mono-label">Production Cost</span></div><div class="case-copy"><p>Aus 12 historischen Bildern aus unterschiedlichen Epochen entstand eine visuelle Timeline. Erst kam die Geschichte. Dann die Bildwelt. Danach das Video.</p><p>Die KI war dabei kein Selbstzweck. Sie hat vorhandenes Material in eine Geschichte übersetzt, die auf Website, Social Media und im Unternehmen funktioniert.</p></div></div></section>
+  <section class="section" style="background: var(--surface-1);"><div class="wrap case-layout"><figure class="case-image"><Image src={personal} alt="Cedric Vazquez Boo bei der Arbeit an einem KI-Content-Projekt" width={1200} height={800} /></figure><div class="case-copy"><span class="mono-label accent">Der Ablauf</span><h2 class="display display-section">Erst denken. Dann bauen.</h2><p>Historisches Material sortieren. Meilensteine verstehen. Szenen entwickeln. Bilder erzeugen. Bewegung hinzufügen. Immer mit dem Originalunternehmen als Maßstab.</p><a class="contact-link" href="mailto:hi@cedric-ki.de">Eigenen Case besprechen →</a></div></div></section>
+  <PosterBreak tone="red" label="Schorer + Wolf / Abschluss">Nicht mehr Material. Eine bessere Geschichte.</PosterBreak>
+</Layout>

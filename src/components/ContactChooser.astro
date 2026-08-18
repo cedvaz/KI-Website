@@ -1,0 +1,119 @@
+---
+import '../styles/contact-chooser.css';
+---
+
+<div class="contact-chooser" data-contact-chooser hidden>
+  <div class="contact-chooser-backdrop" data-contact-close></div>
+  <section class="contact-chooser-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-chooser-title">
+    <button class="contact-chooser-close" type="button" aria-label="Kontaktoptionen schließen" data-contact-close>×</button>
+    <span class="mono-label accent-text">Kontakt · Kempten</span>
+    <h2 class="display" id="contact-chooser-title">Anfrage senden</h2>
+    <p class="contact-chooser-copy">Wähle, womit du deine Anfrage senden möchtest. Wenn auf deinem Gerät kein Mailprogramm eingerichtet ist, funktionieren Gmail und Outlook direkt im Browser.</p>
+    <div class="contact-chooser-actions">
+      <a class="hero-cta" href="mailto:hi@cedric-ki.de" data-contact-mail>E-Mail-App öffnen <span>→</span></a>
+      <a class="contact-chooser-option" href="#" target="_blank" rel="noopener noreferrer" data-contact-gmail>Gmail im Browser öffnen <span>↗</span></a>
+      <a class="contact-chooser-option" href="#" target="_blank" rel="noopener noreferrer" data-contact-outlook>Outlook im Browser öffnen <span>↗</span></a>
+      <button class="contact-chooser-option contact-chooser-copy" type="button" data-contact-copy>E-Mail-Adresse kopieren <span>⧉</span></button>
+    </div>
+    <p class="contact-chooser-status" role="status" aria-live="polite" data-contact-status></p>
+    <p class="contact-chooser-address"><a href="mailto:hi@cedric-ki.de" data-contact-address>hi@cedric-ki.de</a></p>
+  </section>
+</div>
+
+<script is:inline>
+  (() => {
+    const chooser = document.querySelector('[data-contact-chooser]');
+    if (!chooser || chooser.dataset.ready) return;
+    chooser.dataset.ready = 'true';
+
+    const email = 'hi@cedric-ki.de';
+    const mailLink = chooser.querySelector('[data-contact-mail]');
+    const gmailLink = chooser.querySelector('[data-contact-gmail]');
+    const outlookLink = chooser.querySelector('[data-contact-outlook]');
+    const copyButton = chooser.querySelector('[data-contact-copy]');
+    const status = chooser.querySelector('[data-contact-status]');
+    let lastTrigger = null;
+
+    const getMessage = (link) => {
+      const rawHref = link?.getAttribute('href') || '';
+      const [addressPart, query = ''] = rawHref.replace(/^mailto:/i, '').split('?');
+      const params = new URLSearchParams(query);
+      const label = link?.textContent?.replace(/[→↗]/g, '').trim().toLowerCase() || '';
+      const subject = params.get('subject') || (label.includes('gespräch') || label.includes('anfrage')
+        ? 'Gesprächsanfrage über cedric-ki.de'
+        : 'Kontakt über cedric-ki.de');
+      const body = params.get('body') || 'Hallo Cedric,\n\nich möchte gern über eine Zusammenarbeit sprechen.\n\nViele Grüße';
+      return { address: addressPart || email, subject, body };
+    };
+
+    const setContactLinks = (link) => {
+      const message = getMessage(link);
+      const mailParams = new URLSearchParams({ subject: message.subject, body: message.body });
+      const gmailParams = new URLSearchParams({ view: 'cm', fs: '1', to: message.address, su: message.subject, body: message.body });
+      const outlookParams = new URLSearchParams({ to: message.address, subject: message.subject, body: message.body });
+      mailLink.href = `mailto:${message.address}?${mailParams.toString()}`;
+      gmailLink.href = `https://mail.google.com/mail/?${gmailParams.toString()}`;
+      outlookLink.href = `https://outlook.office.com/mail/deeplink/compose?${outlookParams.toString()}`;
+      status.textContent = '';
+      return message;
+    };
+
+    const closeChooser = () => {
+      chooser.hidden = true;
+      document.body.classList.remove('contact-chooser-open');
+      lastTrigger?.focus();
+      lastTrigger = null;
+    };
+
+    const showChooser = (link) => {
+      lastTrigger = link;
+      setContactLinks(link);
+      chooser.hidden = false;
+      document.body.classList.add('contact-chooser-open');
+      chooser.querySelector('[data-contact-mail]')?.focus();
+    };
+
+    document.addEventListener('click', (event) => {
+      const target = event.target instanceof Element ? event.target : null;
+      const mailtoLink = target?.closest('a[href^="mailto:"]');
+      if (mailtoLink && !chooser.contains(mailtoLink)) {
+        let appOpened = false;
+        let fallbackTimer;
+        const markAppOpened = () => {
+          appOpened = true;
+          window.clearTimeout(fallbackTimer);
+          window.removeEventListener('blur', markAppOpened);
+          document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+        const handleVisibilityChange = () => {
+          if (document.hidden) markAppOpened();
+        };
+
+        window.addEventListener('blur', markAppOpened, { once: true });
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        fallbackTimer = window.setTimeout(() => {
+          window.removeEventListener('blur', markAppOpened);
+          document.removeEventListener('visibilitychange', handleVisibilityChange);
+          if (!appOpened) showChooser(mailtoLink);
+        }, 1200);
+        return;
+      }
+
+      if (target?.closest('[data-contact-close]')) closeChooser();
+    });
+
+    copyButton?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        status.textContent = `${email} wurde kopiert.`;
+      } catch {
+        status.textContent = `Bitte kopiere diese Adresse: ${email}`;
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !chooser.hidden) closeChooser();
+    });
+  })();
+</script>

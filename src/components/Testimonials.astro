@@ -1,0 +1,14 @@
+---
+import type { Testimonial } from '../data/site';
+const { testimonials } = Astro.props as { testimonials: Testimonial[] };
+---
+<div class="quote-grid">
+  {testimonials.map((item) => (
+    <article class="quote">
+      <span class="quote-metric">{item.metric}</span>
+      <span class="mono-label quote-label">{item.metricLabel}</span>
+      <blockquote>„{item.text}“</blockquote>
+      <cite>{item.author} · {item.role}</cite>
+    </article>
+  ))}
+</div>

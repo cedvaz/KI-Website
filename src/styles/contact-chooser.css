@@ -1,0 +1,20 @@
+.contact-chooser[hidden] { display: none; }
+.contact-chooser { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; padding: 1rem; }
+.contact-chooser-backdrop { position: absolute; inset: 0; background: color-mix(in srgb, var(--ink) 82%, transparent); }
+.contact-chooser-dialog { position: relative; width: min(100%, 40rem); max-height: min(100%, 45rem); overflow: auto; padding: clamp(1.5rem, 5vw, 3rem); background: var(--paper); color: var(--ink); border: 1px solid var(--paper); box-shadow: 1rem 1rem 0 var(--accent); }
+.contact-chooser-close { position: absolute; top: .55rem; right: .8rem; width: 2.25rem; height: 2.25rem; padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 2rem; line-height: 1; cursor: pointer; }
+.contact-chooser-dialog h2 { max-width: 30rem; margin: .8rem 0 1.2rem; font-size: clamp(3rem, 9vw, 6.5rem); }
+.contact-chooser-copy { max-width: 32rem; margin: 0; font-size: 1.08rem; line-height: 1.2; color: color-mix(in srgb, var(--ink) 72%, transparent); }
+.contact-chooser-actions { display: grid; gap: .65rem; margin-top: 1.8rem; }
+.contact-chooser-option { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .95rem 1rem; border: 1px solid var(--ink); background: transparent; color: var(--ink); font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-align: left; text-transform: uppercase; cursor: pointer; }
+.contact-chooser-option:hover, .contact-chooser-option:focus-visible { background: var(--surface-2); }
+.contact-chooser-option span { color: var(--accent-text); font-size: 1.1rem; }
+.contact-chooser-copy { width: 100%; }
+.contact-chooser-status { min-height: 1.2em; margin: 1rem 0 0; color: var(--accent-text); font-family: var(--font-mono); font-size: .72rem; }
+.contact-chooser-address { margin: 1.2rem 0 0; font-family: var(--font-mono); font-size: .78rem; }
+.contact-chooser-address a { color: var(--accent-text); border-bottom: 1px solid currentColor; }
+body.contact-chooser-open { overflow: hidden; }
+
+@media (max-width: 800px) {
+  .contact-chooser-dialog { box-shadow: .6rem .6rem 0 var(--accent); }
+}

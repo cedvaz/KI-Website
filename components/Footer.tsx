@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { navigateWithoutReload } from '../lib/navigation';
 
 const Footer: React.FC = () => {
   return (
@@ -52,20 +53,20 @@ const Footer: React.FC = () => {
           <div>© 2026 Cedric KI – Marketing & Vertrieb mit KI</div>
           <div className="flex gap-8">
             <a
-              href="#impressum"
+              href="/impressum"
               onClick={(e) => {
                 e.preventDefault();
-                window.location.hash = 'impressum';
+                navigateWithoutReload('/impressum');
               }}
               className="hover:text-white transition-colors"
             >
               Impressum
             </a>
             <a
-              href="#datenschutz"
+              href="/datenschutz"
               onClick={(e) => {
                 e.preventDefault();
-                window.location.hash = 'datenschutz';
+                navigateWithoutReload('/datenschutz');
               }}
               className="hover:text-white transition-colors"
             >

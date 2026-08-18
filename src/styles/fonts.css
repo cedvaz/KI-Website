@@ -1,0 +1,18 @@
+@import '@fontsource/space-mono/400.css';
+@import '@fontsource/space-mono/700.css';
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../assets/fonts/satoshi.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+:root {
+  /* Delight is designed as a drop-in @font-face when the commercial licence is confirmed. */
+  --font-display: 'Archivo Black', 'Arial Black', sans-serif;
+  /* Satoshi is self-hosted above; the fallbacks cover environments without font loading. */
+  --font-body: 'Satoshi', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+}

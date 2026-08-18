@@ -1,0 +1,16 @@
+:root {
+  /* Palette "Dusty" v1 — change only these five values for a palette swap. */
+  --c-paper: #F9F7F0;
+  --c-ink: #000000;
+  --c-accent: #CC3525;
+  --c-surface1: #DBE1E8;
+  --c-surface2: #A9C2D8;
+
+  /* Semantic roles. Components use roles, never raw colour values. */
+  --paper: var(--c-paper);
+  --ink: var(--c-ink);
+  --accent: var(--c-accent);
+  --accent-text: #A62A1D;
+  --surface-1: var(--c-surface1);
+  --surface-2: var(--c-surface2);
+}

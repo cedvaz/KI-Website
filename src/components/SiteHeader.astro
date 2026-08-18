@@ -1,0 +1,25 @@
+---
+import { services } from '../data/site';
+
+const nav = [
+  ['Wissen', '/wissen'],
+  ['Über Cedric', '/ueber-cedric-vazquez-boo'],
+];
+---
+<header class="site-header">
+  <div class="wrap micro-grid">
+    <a class="wordmark" href="/" aria-label="Cedric KI Startseite">CEDRIC <span>KI</span></a>
+    <nav class="header-nav mono-label" aria-label="Hauptnavigation">
+      <details class="services-menu">
+        <summary>Leistungen <span aria-hidden="true">↘</span></summary>
+        <div class="services-subnav">
+          {services.map((service) => <a href={service.slug}><span>{service.number}</span>{service.title}</a>)}
+        </div>
+      </details>
+      {nav.map(([label, href]) => <a href={href}>{label}</a>)}
+    </nav>
+    <span class="mono-label quiet">KI / MARKETING / VERTRIEB</span>
+    <div class="header-contact mono-label"><span>Kempten</span><br /><a href="/#contact">Kontakt →</a></div>
+  </div>
+  <div class="wrap hairline"></div>
+</header>

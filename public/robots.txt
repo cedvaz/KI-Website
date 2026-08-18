@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow:
 
-Sitemap: https://www.cedric-ki.de/sitemap.xml
+Sitemap: https://www.cedric-ki.de/sitemap-index.xml
